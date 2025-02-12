@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iframe CGI</title>
+</head>
+
+<body>
+    <script type="module">
+        import { onMessage, sendMessageFor } from './php-cgi-wasm/msg-bus.mjs';
+
+        const SERVICE_WORKER_SCRIPT_URL = './cgi-worker.mjs';
+
+        navigator.serviceWorker.register(SERVICE_WORKER_SCRIPT_URL, {"type": "module"});
+
+        // navigator.serviceWorker.addEventListener('message', onMessage);
+
+        // const sendMessage = sendMessageFor(SERVICE_WORKER_SCRIPT_URL);
+
+        // const result = await sendMessage(methodName, [param, param, param]);
+    </script>
+</body>
+
+</html>
