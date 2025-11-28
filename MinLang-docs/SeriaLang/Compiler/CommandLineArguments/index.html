@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>CommandLine Arguments - MinLang + SeriaLang Documentation</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "CommandLine Arguments";
+        var mkdocs_page_input_path = "SeriaLang/Compiler/CommandLineArguments.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> MinLang + SeriaLang Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../../General/GetStarted/">Get Started</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">SeriaLang</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" >Compiler</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../Exceptions/">Exceptions</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">CommandLine Arguments</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#usage">Usage</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#options">Options</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#including-paths">Including Paths</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#configlibenv">config.lib.env</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Language</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Language/Overview/">Overview</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Language/Types/">Types</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Language/Variables/">Variables</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Language/Comments/">Comments</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Language/Functions/">Functions</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Language/ULHC/">SeriaLang Header File</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Language/IfAndFor/">If And For Statements</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Language/Import/">Importing</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Language/Pointers/">Pointers</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Language/Concat/">String Concat</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">MinLang</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" >Compiler</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../MinLang/Compiler/Exceptions/">Exceptions</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../MinLang/Compiler/CommandLineArguments/">CommandLine Arguments</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../MinLang/Overview/">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../MinLang/Limitations/">Limitations</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Libraries</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../MinLang/Libraries/stdlib/">stdlib</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../MinLang/Libraries/libmc/">mclib</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">MinLang + SeriaLang Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">SeriaLang</li>
+          <li class="breadcrumb-item">Compiler</li>
+      <li class="breadcrumb-item active">CommandLine Arguments</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/4rchXceed/MinLang-docs/tree/master/docs/SeriaLang/Compiler/CommandLineArguments.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="command-line-arguments">Command Line Arguments</h1>
+<h2 id="usage">Usage</h2>
+<p>program sourceFile.ucl output[.ucobject] [options]</p>
+<h2 id="options">Options</h2>
+<p>-c+=verbose: Enables verbose output during the type checking process. (a hella lot of debug prints) (Use it with -c+=no-progress to avoid errors)</p>
+<p>-c+=silent: Disables all output except for errors.</p>
+<p>-c+=no-progress: Disables progress bar display.</p>
+<p>-c+=no-output: Disables output file generation. (Useful for just checking syntax without generating output)</p>
+<p>-c+=bypass-warnings: Ignores all warnings during the type checking process. (not recommended)</p>
+<p>-c+=bypass-errors: Ignores all errors during the type checking process. (not recommended at all)</p>
+<p>-c+=noerror-ignore-bypass: Disables output for ignored errors OR warnings when -c+=bypass-errors / -c+=bypass-warnings is used.</p>
+<p>-c+=ignore-<error_code>: Ignores specific error codes during the type checking process. Replace <error_code> with the actual code to ignore. (Check <a href="../Exceptions/">Exceptions.md</a> for error codes)</p>
+<p>-c+=error-printstack: Prints the current stack trace when an error occurs. (Useful for debugging/development purposes)</p>
+<h3 id="including-paths">Including Paths</h3>
+<p>-I&lt;path&gt;: Adds a directory to the list of paths to search for imported files.
+Multiple -I options can be used to add multiple directories.</p>
+<p>-I MUST be in uppercase.</p>
+<h3 id="configlibenv">config.lib.env</h3>
+<p>In this file, you can set a keyword=path:</p>
+<pre><code class="language-env">STDLIB=path/to/stdlib
+</code></pre>
+<p>And then use it in the command line:
+<code>-Istdlib</code> (or <code>-ISTDLIB</code>), but the first one is recommended for readability.</p>
+<p>config.lib.env is located in the same directory as the current pwd (where you run the command).</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../Exceptions/" class="btn btn-neutral float-left" title="Exceptions"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../Language/Overview/" class="btn btn-neutral float-right" title="Overview">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/4rchXceed/MinLang" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../Exceptions/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../../Language/Overview/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

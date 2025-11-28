@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>If And For Statements - MinLang + SeriaLang Documentation</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "If And For Statements";
+        var mkdocs_page_input_path = "SeriaLang/Language/IfAndFor.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> MinLang + SeriaLang Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../../General/GetStarted/">Get Started</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">SeriaLang</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" >Compiler</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Compiler/Exceptions/">Exceptions</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Compiler/CommandLineArguments/">CommandLine Arguments</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" >Language</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../Overview/">Overview</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Types/">Types</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Variables/">Variables</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Comments/">Comments</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Functions/">Functions</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../ULHC/">SeriaLang Header File</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">If And For Statements</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#if-statement">If Statement</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#condition">Condition</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#function-call">Function Call</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#for-statement">For Statement</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#start-end-step">Start, End, Step</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#function-call_1">Function Call</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#additional-notes">Additional Notes</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Import/">Importing</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Pointers/">Pointers</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Concat/">String Concat</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">MinLang</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" >Compiler</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../MinLang/Compiler/Exceptions/">Exceptions</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../MinLang/Compiler/CommandLineArguments/">CommandLine Arguments</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../MinLang/Overview/">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../MinLang/Limitations/">Limitations</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Libraries</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../MinLang/Libraries/stdlib/">stdlib</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../MinLang/Libraries/libmc/">mclib</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">MinLang + SeriaLang Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">SeriaLang</li>
+          <li class="breadcrumb-item">Language</li>
+      <li class="breadcrumb-item active">If And For Statements</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/4rchXceed/MinLang-docs/tree/master/docs/SeriaLang/Language/IfAndFor.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="if-and-for-statements">If and For Statements</h1>
+<h2 id="if-statement">If Statement</h2>
+<p>The <code>If</code> statement is used to execute a function based on a condition. The syntax is as follows:</p>
+<pre><code class="language-ucl">If (#::myLocalVar = 1): PrintMsg()&lt;&gt;
+</code></pre>
+<h3 id="condition">Condition</h3>
+<ul>
+<li>The condition must be a comparison between a local variable and a literal value.</li>
+<li>The comparison is handled by the compiler, not by the SeriaLang interpreter.</li>
+<li>The condition can only be <code>=</code> (equal), <code>&lt;</code> (less than), <code>&gt;</code> (greater than), <code>&lt;=</code> (less than or equal to), <code>&gt;=</code> (greater than or equal to).</li>
+<li>Adding ! before the comparison operator will negate the condition (e.g., <code>!=</code>, <code>!&lt;</code>, <code>!&gt;</code>, <code>!&lt;=</code>, <code>!&gt;=</code>).</li>
+<li>The local variable must be of type <code>Int</code>.</li>
+<li>The literal value must be of type <code>Int</code>.</li>
+<li>You can compare a local variable to another local variable</li>
+<li>You can compare a local variable to a global variable</li>
+<li>You can compare a global variable to another global variable (the result will be hardcoded)</li>
+<li>You can compare a global variable to a literal value (the result will be hardcoded)</li>
+</ul>
+<h3 id="function-call">Function Call</h3>
+<ul>
+<li>You can pass parameters to the function being called.</li>
+</ul>
+<h2 id="for-statement">For Statement</h2>
+<p>The <code>For</code> statement is used to execute a function multiple times based on a condition. The syntax is as follows:</p>
+<pre><code class="language-ucl">For (0; 10; 1) -&gt; i: MyFun()&lt;&gt;
+</code></pre>
+<p>About this example:</p>
+<ul>
+<li>The loop will start at <code>0</code> and end at <code>10</code>, incrementing by <code>1</code> each time.</li>
+<li>The loop variable is <code>i</code>, which will take the values from <code>0</code> to <code>9</code>.</li>
+<li>The function <code>MyFun</code> will be called <code>10</code> times, with <code>i</code> taking the values from <code>0</code> to <code>9</code>.</li>
+<li>You can pass <code>i</code> as a parameter to the function being called.</li>
+<li>You can pass the loop variable as a parameter to the function being called.</li>
+</ul>
+<h3 id="start-end-step">Start, End, Step</h3>
+<ul>
+<li>The <code>start</code>, <code>end</code>, and <code>step</code> values must be literal values of type <code>Int</code>.</li>
+<li>The <code>start</code> value is inclusive, meaning the loop will start at this value.</li>
+<li>The <code>end</code> value is exclusive, meaning the loop will end before this value.</li>
+<li>The <code>step</code> value is the amount by which the loop variable will be incremented/decremented each time.</li>
+</ul>
+<h3 id="function-call_1">Function Call</h3>
+<p>Same as the <code>If</code> statement.</p>
+<h3 id="additional-notes">Additional Notes</h3>
+<p>The for loop is managed by the compiler, not by the SeriaLang interpreter. This means that the loop will be unrolled at compile time, and the resulting code will be a series of function calls.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../ULHC/" class="btn btn-neutral float-left" title="SeriaLang Header File"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../Import/" class="btn btn-neutral float-right" title="Importing">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/4rchXceed/MinLang" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../ULHC/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../Import/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

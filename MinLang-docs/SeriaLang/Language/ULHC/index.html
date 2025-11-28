@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>SeriaLang Header File - MinLang + SeriaLang Documentation</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "SeriaLang Header File";
+        var mkdocs_page_input_path = "SeriaLang/Language/ULHC.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> MinLang + SeriaLang Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../../General/GetStarted/">Get Started</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">SeriaLang</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" >Compiler</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Compiler/Exceptions/">Exceptions</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Compiler/CommandLineArguments/">CommandLine Arguments</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" >Language</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../Overview/">Overview</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Types/">Types</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Variables/">Variables</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Comments/">Comments</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Functions/">Functions</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">SeriaLang Header File</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#file-extension">File Extension</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#purpose">Purpose</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#syntax">Syntax</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#limitations">Limitations</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#example">Example</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#why-another-file-format">Why another file format?</a>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../IfAndFor/">If And For Statements</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Import/">Importing</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Pointers/">Pointers</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Concat/">String Concat</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">MinLang</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" >Compiler</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../MinLang/Compiler/Exceptions/">Exceptions</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../MinLang/Compiler/CommandLineArguments/">CommandLine Arguments</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../MinLang/Overview/">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../MinLang/Limitations/">Limitations</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Libraries</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../MinLang/Libraries/stdlib/">stdlib</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../MinLang/Libraries/libmc/">mclib</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">MinLang + SeriaLang Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">SeriaLang</li>
+          <li class="breadcrumb-item">Language</li>
+      <li class="breadcrumb-item active">SeriaLang Header File</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/4rchXceed/MinLang-docs/tree/master/docs/SeriaLang/Language/ULHC.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="universal-language-header-file-ulhc">Universal Language Header File (ULHC)</h1>
+<p>This file describes the Universal Language Header Code (ULHC) used in SeriaLang. The ULHC is handled by the compiler, and not by the SeriaLang interpreter.</p>
+<h2 id="file-extension">File Extension</h2>
+<p>The ULHC files have the <code>.uchc</code> extension.</p>
+<h2 id="purpose">Purpose</h2>
+<p>The ULHC does not contain any SeriaLang code. It is used to define "special" functions:
+The function (commonly named Custom Define) will have parameters, and a string containing commands to execute. The parameters will be replaced in the command string.</p>
+<p>This is useful for defining functions that would be tedious to write in SeriaLang, or that require specific commands that are not easily represented in SeriaLang.</p>
+<h2 id="syntax">Syntax</h2>
+<p>The syntax for defining a ULHC function is as follows:</p>
+<pre><code class="language-ucl">[Print(String message;)] =&gt; &lt;say ?message?&gt;
+</code></pre>
+<ul>
+<li>The function name is <code>Print</code>.</li>
+<li>It takes a single parameter of type <code>String</code> named <code>message</code>.</li>
+<li>The command string is <code>&lt;say ?message?&gt;</code>, where <code>?message?</code> will be replaced by the value passed to the <code>message</code> parameter.</li>
+</ul>
+<h2 id="limitations">Limitations</h2>
+<p>The Custom Define functions have some limitations:</p>
+<ul>
+<li>They are not dynamic. You cannot create or modify them at runtime.</li>
+<li>They cannot contain SeriaLang code. Only the command string is allowed.</li>
+<li>They cannot return values. They are purely for executing commands.</li>
+<li>They cannot have local variables or control flow. The command string is executed as-is.</li>
+</ul>
+<h2 id="example">Example</h2>
+<p>Here is an example of a ULHC file defining a simple print function:</p>
+<pre><code class="language-uclhc">[Print(String message;)] =&gt; &lt;say ?message?&gt;
+</code></pre>
+<pre><code class="language-ucl">fun Main():
+    Print(&quot;Hello, World!&quot;)
+Main
+</code></pre>
+<p>This will execute the command <code>say Hello, World!</code> when the <code>Main</code> function is called.</p>
+<h2 id="why-another-file-format">Why another file format?</h2>
+<p>Why not?</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../Functions/" class="btn btn-neutral float-left" title="Functions"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../IfAndFor/" class="btn btn-neutral float-right" title="If And For Statements">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/4rchXceed/MinLang" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../Functions/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../IfAndFor/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>Variables - MinLang + SeriaLang Documentation</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Variables";
+        var mkdocs_page_input_path = "SeriaLang/Language/Variables.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> MinLang + SeriaLang Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../../General/GetStarted/">Get Started</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">SeriaLang</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" >Compiler</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Compiler/Exceptions/">Exceptions</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Compiler/CommandLineArguments/">CommandLine Arguments</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" >Language</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../Overview/">Overview</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Types/">Types</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">Variables</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#global-variables">Global Variables</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#creation">Creation</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#access">Access</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#local-variables">Local Variables</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#creation_1">Creation</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#access_1">Access</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#modifying">Modifying</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#variable-naming">Variable Naming</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#function-call-as-value-function-pointers">Function call as value (Function pointers)</a>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Comments/">Comments</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Functions/">Functions</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../ULHC/">SeriaLang Header File</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../IfAndFor/">If And For Statements</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Import/">Importing</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Pointers/">Pointers</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Concat/">String Concat</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">MinLang</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" >Compiler</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../MinLang/Compiler/Exceptions/">Exceptions</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../MinLang/Compiler/CommandLineArguments/">CommandLine Arguments</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../MinLang/Overview/">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../MinLang/Limitations/">Limitations</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Libraries</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../MinLang/Libraries/stdlib/">stdlib</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../MinLang/Libraries/libmc/">mclib</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">MinLang + SeriaLang Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">SeriaLang</li>
+          <li class="breadcrumb-item">Language</li>
+      <li class="breadcrumb-item active">Variables</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/4rchXceed/MinLang-docs/tree/master/docs/SeriaLang/Language/Variables.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="variables">Variables</h1>
+<p>Halalala variables...
+I could do a whole documentation about variables, but I won't.</p>
+<p>Value Types:</p>
+<p>When I say "Value type" I does not mean the type of the variable. When you need to pass a value to: a variable, a function parameter, etc. the compiler will instanciate a class "Value" that will check the declaration syntax. The value type is the type of the value you are passing. For example, if you have a variable of type <code>Int</code> and you want to assign it a value, the value type must be <code>Int</code> too. If you try to assign a <code>String</code> to an <code>Int</code> variable, the compiler will throw an error. BUT: the value can also be a local variable, a global variable, a function call, etc. The compiler will check the type of the value at compile time.</p>
+<p>Here's the list of value types:</p>
+<ul>
+<li>GlobalVar Global Variable</li>
+<li>LocalVar Local Variable</li>
+<li>LocalVar (GlobalVar) Local Variable BUT where the name is a global variable</li>
+<li>CodeBlock A string that will hold the instructions/commands to run a function</li>
+<li>Literal A literal (Int, Float, String, Bool, Void)</li>
+</ul>
+<h2 id="global-variables">Global Variables</h2>
+<p>Global variables are defined outside of any function or block. They can be accessed from anywhere in the code.</p>
+<h3 id="creation">Creation</h3>
+<pre><code class="language-ucl">const String $printText = &quot;Test&quot;
+const Void $null = null
+</code></pre>
+<p>Their value needs to be defined at the moment of declaration, and they cannot be changed later (because they are <code>const</code>).
+They can be of any type, including <code>Void</code> (yes).
+Their value type can be a literal, another global variable, or a "code block" (function call code).</p>
+<h3 id="access">Access</h3>
+<p>To access a global variable, just use its name with a <code>$::</code> prefix:</p>
+<pre><code class="language-ucl">print($::printText)
+</code></pre>
+<h2 id="local-variables">Local Variables</h2>
+<p>Local variables are defined inside a function or block. They can only be accessed from within the function or block they are defined in.</p>
+<blockquote>
+<p>[!WARNING]
+SeriaLang's variables does not have scope. If you declare a variable named <code>score</code>, you will be able to access it everywhere in the code. (This is not a bug, Minecraft's score system is just... bad)
+!!! The ONLY type of a local variable is INT (because Minecraft's score system only supports integers aka dummy)
+You cannot (yet) pass a local variable as a parameter to a function. (I will implement this)</p>
+</blockquote>
+<h3 id="creation_1">Creation</h3>
+<pre><code class="language-ucl">Int myLocalVar = 1
+</code></pre>
+<p>Their value needs to be defined at the moment of declaration, and they can be changed later.</p>
+<h3 id="access_1">Access</h3>
+<p>To access a global variable, just use its name with a <code>#::</code> prefix:</p>
+<pre><code class="language-ucl">Print(#::myLocalVar)
+</code></pre>
+<h3 id="modifying">Modifying</h3>
+<p>To modify a local variable, just use its name with a <code>#::</code> prefix and then <code>::Set</code>, <code>::Add</code>, <code>::Sub</code>:</p>
+<pre><code class="language-ucl">#::myLocalVar::Set(5)  // Sets the variable to 5
+#::myLocalVar::Add(3)  // Adds 3 to the variable (now it's 8)
+#::myLocalVar::Sub(2)  // Subtracts 2 from the variable (now it's 6)
+</code></pre>
+<p>I'm planning to implement more operations like <code>Mul</code>, <code>Div</code>, etc.</p>
+<h2 id="variable-naming">Variable Naming</h2>
+<p>Variable names must start with a letter (a-z, A-Z) or an underscore (_), followed by letters, digits (0-9), or underscores. They are case-sensitive.
+Because we use prefixes, as long as a variable name is valid and unique you can use it (even a variable named true is allowed).</p>
+<h2 id="function-call-as-value-function-pointers">Function call as value (Function pointers)</h2>
+<p>You can pass a function call as a value to a parameter or a variable. It will return a String containing the commands to execute the function.
+Syntax: &lt;%FunctionName()&lt;params...&gt;%&gt;</p>
+<pre><code class="language-ucl">%import libmc/cmd.uchc
+
+ascode fun WhileGt(String var; Int value; String callback;):
+    If (#::{$::var} &gt; $::value): Execute()&lt;$::callback&gt;
+    If (#::{$::var} &gt; $::value): Execute()&lt;$::self&gt;
+WhileGt
+</code></pre>
+<p>You can then use the function call as a value:</p>
+<pre><code class="language-ucl">fun Main():
+    WhileGt(&quot;myLocalVar&quot;; 10; &lt;%Print()&lt;&quot;myLocalVar is greater than 10!&quot;&gt;%)&lt;&gt;
+Main
+</code></pre>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../Types/" class="btn btn-neutral float-left" title="Types"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../Comments/" class="btn btn-neutral float-right" title="Comments">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/4rchXceed/MinLang" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../Types/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../Comments/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

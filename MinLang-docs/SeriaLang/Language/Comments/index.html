@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>Comments - MinLang + SeriaLang Documentation</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Comments";
+        var mkdocs_page_input_path = "SeriaLang/Language/Comments.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> MinLang + SeriaLang Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../../General/GetStarted/">Get Started</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">SeriaLang</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" >Compiler</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Compiler/Exceptions/">Exceptions</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Compiler/CommandLineArguments/">CommandLine Arguments</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" >Language</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../Overview/">Overview</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Types/">Types</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Variables/">Variables</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">Comments</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#whole-line-comments">Whole Line Comments</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#inline-comments">Inline Comments</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#what-if-you-need-to-print">What if you need to print "//"?</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#multi-line-comments">Multi-line Comments</a>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Functions/">Functions</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../ULHC/">SeriaLang Header File</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../IfAndFor/">If And For Statements</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Import/">Importing</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Pointers/">Pointers</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Concat/">String Concat</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">MinLang</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" >Compiler</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../MinLang/Compiler/Exceptions/">Exceptions</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../MinLang/Compiler/CommandLineArguments/">CommandLine Arguments</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../MinLang/Overview/">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../MinLang/Limitations/">Limitations</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Libraries</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../MinLang/Libraries/stdlib/">stdlib</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../MinLang/Libraries/libmc/">mclib</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">MinLang + SeriaLang Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">SeriaLang</li>
+          <li class="breadcrumb-item">Language</li>
+      <li class="breadcrumb-item active">Comments</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/4rchXceed/MinLang-docs/tree/master/docs/SeriaLang/Language/Comments.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="comments">Comments</h1>
+<p>Comments in SeriaLang are used to annotate code and provide explanations or notes for developers. They are ignored by the compiler and do not affect the execution of the program.</p>
+<h2 id="whole-line-comments">Whole Line Comments</h2>
+<p>Whole line comments start with <code>//</code> and continue until the end of the line.</p>
+<pre><code class="language-ucl">// This is a whole line comment
+</code></pre>
+<h2 id="inline-comments">Inline Comments</h2>
+<p>Inline comments also start with <code>//</code> and continue until the end of the line. They can be placed at the end of a line of code.</p>
+<pre><code class="language-ucl">Int myVar = 10 // This is an inline comment
+</code></pre>
+<h2 id="what-if-you-need-to-print">What if you need to print "//"?</h2>
+<p>You can use a backslash <code>\</code> to escape the <code>//</code> sequence.</p>
+<pre><code class="language-ucl">print(&quot;This is not a comment: \/\/&quot;)
+</code></pre>
+<h2 id="multi-line-comments">Multi-line Comments</h2>
+<p>Not supported (yet)</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../Variables/" class="btn btn-neutral float-left" title="Variables"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../Functions/" class="btn btn-neutral float-right" title="Functions">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/4rchXceed/MinLang" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../Variables/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../Functions/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

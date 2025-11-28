@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>Exceptions - MinLang + SeriaLang Documentation</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Exceptions";
+        var mkdocs_page_input_path = "MinLang/Compiler/Exceptions.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> MinLang + SeriaLang Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../../General/GetStarted/">Get Started</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">SeriaLang</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" >Compiler</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../SeriaLang/Compiler/Exceptions/">Exceptions</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../SeriaLang/Compiler/CommandLineArguments/">CommandLine Arguments</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Language</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../SeriaLang/Language/Overview/">Overview</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../SeriaLang/Language/Types/">Types</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../SeriaLang/Language/Variables/">Variables</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../SeriaLang/Language/Comments/">Comments</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../SeriaLang/Language/Functions/">Functions</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../SeriaLang/Language/ULHC/">SeriaLang Header File</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../SeriaLang/Language/IfAndFor/">If And For Statements</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../SeriaLang/Language/Import/">Importing</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../SeriaLang/Language/Pointers/">Pointers</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../SeriaLang/Language/Concat/">String Concat</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">MinLang</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" >Compiler</a>
+    <ul class="current">
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">Exceptions</a>
+    <ul class="current">
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../CommandLineArguments/">CommandLine Arguments</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Overview/">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Limitations/">Limitations</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Libraries</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Libraries/stdlib/">stdlib</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Libraries/libmc/">mclib</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">MinLang + SeriaLang Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">MinLang</li>
+          <li class="breadcrumb-item">Compiler</li>
+      <li class="breadcrumb-item active">Exceptions</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/4rchXceed/MinLang-docs/tree/master/docs/MinLang/Compiler/Exceptions.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="minlang-exceptions">MinLang Exceptions</h1>
+<p>1, File not found.</p>
+<ul>
+<li>The specified .ucobject file could not be located. Please check the file path and try again.</li>
+</ul>
+<p>2, Syntax error.</p>
+<ul>
+<li>There was a syntax error in the .ucobject file. Please check the file for any mistakes.</li>
+</ul>
+<p>3, Semantic error.</p>
+<pre><code>- There was a semantic error in the .ucobject file. Please ensure that all constructs are used correctly. [SHOULD NOT HAPPEN]
+</code></pre>
+<p>4, All variables/Function arg must be of type Int (Minecraft scoreboard's only variable is dummy = int)</p>
+<pre><code>- Minecraft only supports integer variables through its scoreboard system. Ensure that all LOCAL variables and function arguments (for non-ascode functions) are of type Int.
+</code></pre>
+<p>5, Function not found.</p>
+<pre><code>- The specified function could not be found. Please ensure that the function name is correct and that it has been defined.
+</code></pre>
+<p>6, Function already exists.</p>
+<pre><code>- A function with the specified name already exists. Please choose a different name for the new function.
+</code></pre>
+<p>7, Variable not initialized [NOT SUPPOSED TO HAPPEN]</p>
+<pre><code>- The variable being accessed has not been initialized. Please ensure that all variables are properly initialized before use.
+</code></pre>
+<p>8, If only supports: [GlobalVar/LocalVar] &lt;|&lt;=|=|&gt;=|&gt; [GlobalVar/Int]</p>
+<pre><code>- The If statement only supports comparisons between Global or Local Variables and either another Global Variable or an Integer using the operators &lt;, &lt;=, =, &gt;=, &gt;.
+</code></pre>
+<p>9, Only Int variables are allowed.</p>
+<pre><code>- Only Integer type variables are supported. Please ensure that all LOCAL variables are of type Int.
+</code></pre>
+<p>10, Generic UCObject error</p>
+<pre><code>- An unspecified error occurred while processing the .ucobject file. Please check the file for any issues.
+</code></pre>
+<p>11, Variable already exists.</p>
+<pre><code>- A variable with the specified name already exists. Please choose a different name for the new variable.
+</code></pre>
+<p>12, Variable doesn't exist.</p>
+<pre><code>- The specified variable could not be found. Please ensure that the variable name is correct and that it has been defined.
+</code></pre>
+<p>13, Only 'Add', 'Sub' and 'Set' operations are allowed on variables.</p>
+<pre><code>- Only the 'Add', 'Sub', and 'Set' operations are supported for variable manipulation. Please use one of these operations.
+</code></pre>
+<p>14, NotImplementedError</p>
+<pre><code>- This feature is not yet implemented. Please refer to the documentation for supported features.
+</code></pre>
+<p>15, I really don't know how you managed to get this error.</p>
+<pre><code>- An unexpected error occurred. Good luck figuring this one out!
+</code></pre>
+<p>16, You can't assign a variable to another variable.</p>
+<pre><code>- Direct assignment between variables is not supported. Please use the 'Set' operation with an integer value instead.
+</code></pre>
+<p>17, Main function not found (it's the entry point of the program).</p>
+<pre><code>- The Main function, which serves as the entry point of the program, could not be found. Please ensure that it is defined correctly. (Should be deleted in future versions)
+</code></pre>
+<p>18, Not enough arguments provided to function.</p>
+<pre><code>- The function was called with fewer arguments than required. Please ensure that all necessary arguments are provided.
+</code></pre>
+<p>19, You can't pass a variable as an argument to a custom define.</p>
+<pre><code>- When calling a custom defined function, you must pass literal values as arguments. Passing LOCAL variables is not supported.
+</code></pre>
+<p>20, Function argument type mismatch.</p>
+<pre><code>- The type of the argument provided to the function does not match the expected type. Please ensure that the correct types are used.
+</code></pre>
+<p>LOCAL = Dynamic vars (INT-only)</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../../../SeriaLang/Language/Concat/" class="btn btn-neutral float-left" title="String Concat"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../CommandLineArguments/" class="btn btn-neutral float-right" title="CommandLine Arguments">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/4rchXceed/MinLang" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../../../SeriaLang/Language/Concat/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../CommandLineArguments/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

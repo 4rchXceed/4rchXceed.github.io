@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>Exceptions - MinLang + SeriaLang Documentation</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Exceptions";
+        var mkdocs_page_input_path = "SeriaLang/Compiler/Exceptions.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> MinLang + SeriaLang Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../../General/GetStarted/">Get Started</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">SeriaLang</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" >Compiler</a>
+    <ul class="current">
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">Exceptions</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#arguments-codeprefix-10">Arguments (CodePrefix: 10)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#general-syntax-codeprefix-20">General Syntax (CodePrefix: 20)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#typing-codeprefix-30">Typing (CodePrefix: 30)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#import-error-codeprefix-40">Import Error (CodePrefix: 40)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#uchc-files-error-universalcompilatorheadercompiler-codeprefix-50">.uchc Files error (UniversalCompilatorHeaderCompiler) (CodePrefix: 50)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#internal-codeprefix-1000">Internal (CodePrefix 1000)</a>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../CommandLineArguments/">CommandLine Arguments</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Language</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Language/Overview/">Overview</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Language/Types/">Types</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Language/Variables/">Variables</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Language/Comments/">Comments</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Language/Functions/">Functions</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Language/ULHC/">SeriaLang Header File</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Language/IfAndFor/">If And For Statements</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Language/Import/">Importing</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Language/Pointers/">Pointers</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Language/Concat/">String Concat</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">MinLang</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" >Compiler</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../MinLang/Compiler/Exceptions/">Exceptions</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../MinLang/Compiler/CommandLineArguments/">CommandLine Arguments</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../MinLang/Overview/">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../MinLang/Limitations/">Limitations</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Libraries</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../MinLang/Libraries/stdlib/">stdlib</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../MinLang/Libraries/libmc/">mclib</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">MinLang + SeriaLang Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">SeriaLang</li>
+          <li class="breadcrumb-item">Compiler</li>
+      <li class="breadcrumb-item active">Exceptions</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/4rchXceed/MinLang-docs/tree/master/docs/SeriaLang/Compiler/Exceptions.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="compile-errors">Compile errors</h1>
+<h2 id="arguments-codeprefix-10">Arguments (CodePrefix: 10)</h2>
+<ul>
+<li>
+<p>Invalid function argument (Code: 11), Type: SyntaxError</p>
+</li>
+<li>
+<p>Invalid function argument count (Code: 12), Type: SyntaxError</p>
+</li>
+</ul>
+<h2 id="general-syntax-codeprefix-20">General Syntax (CodePrefix: 20)</h2>
+<ul>
+<li>
+<p>Unknown expression found in function (Code 21), Type: SyntaxError. Basicly the syntax is not found. Can be set to warning by cli arg -c+=unknown-expression-warning-only</p>
+</li>
+<li>
+<p>Function xyz not closed (Code 22), Type: SyntaxError. Did you forget to put the function name to close it?</p>
+</li>
+<li>
+<p>SyntaxError: Invalid condition syntax (Code 23), Type: SyntaxError.</p>
+</li>
+<li>
+<p>SyntaxError: Invalid function invocation syntax in [LOGIN_EXPRESSION] expression (Code 24), Type: SyntaxError</p>
+</li>
+<li>
+<p>SyntaxError: Unknown expression (Code 25), Type: SyntaxError</p>
+</li>
+</ul>
+<h2 id="typing-codeprefix-30">Typing (CodePrefix: 30)</h2>
+<ul>
+<li>
+<p>TypeError: Type xyz not found (Code: 31), Type: TypeError</p>
+</li>
+<li>
+<p>TypeError: Value abc is not of type xyz (Code: 32), Type: TypeError</p>
+</li>
+<li>
+<p>TypeError: Value abc isn't a known literal/global constant/local variable (Code: 33), Type: TypeError</p>
+</li>
+<li>
+<p>TypeError: Argument Count in function abc must be an abc, got: xyz (Code: 34), Type: TypeError</p>
+</li>
+<li>
+<p>TypeError: Function " + funName + " already defined (Code: 35), Type: TypeError</p>
+</li>
+<li>
+<p>TypeError: Function abc not found (Code: 36), Type: TypeError, needed for as code (ascode flag) function.</p>
+</li>
+<li>
+<p>TypeError: Parent function is null (Code: 37), Type: InternalError. (This usually means that the function is called in a for loop, as value, or if, please use a "whole line" to call them: Function()&lt;&gt;).</p>
+</li>
+<li>
+<p>TypeError: LocalVar cannot be used as function argument in ascode function (Code: 38), Type: TypeError</p>
+</li>
+<li>
+<p>TypeError: Type mismatch abc is of type abc but was used as type abc (Code 39 [MIKUUUU!]), Type: TypeError. This usually means that you are trying to assign a value of one type to a variable of another type, or passing an argument of the wrong type to a function.</p>
+</li>
+</ul>
+<h2 id="import-error-codeprefix-40">Import Error (CodePrefix: 40)</h2>
+<ul>
+<li>
+<p>Import file abc does not exist (Code 41), Type: ImportError</p>
+</li>
+<li>
+<p>File already imported (Code 42), Type: ImportWarning</p>
+</li>
+<li>
+<p>ImportError: The import folder abc does not exist (Code: 43), Type: ImportError</p>
+</li>
+</ul>
+<h2 id="uchc-files-error-universalcompilatorheadercompiler-codeprefix-50">.uchc Files error (UniversalCompilatorHeaderCompiler) (CodePrefix: 50)</h2>
+<ul>
+<li>CustomDefineError: Custom define name abc is already used by another custom define or function (Code: 51), Type: CustomDefineError</li>
+</ul>
+<h2 id="internal-codeprefix-1000">Internal (CodePrefix 1000)</h2>
+<ul>
+<li>
+<p>Expression is not an ExpressionTemplate (Code: 1001), Type: InternalError</p>
+</li>
+<li>
+<p>Tried to parse a xyz expression as xyz (Code: 1002), Type: InternalError</p>
+</li>
+<li>
+<p>Expression does not have IsExpression method (Code: 1003), Type: InternalError</p>
+</li>
+<li>
+<p>Argument count value is null in function modification expression (Code: 1004), Type: InternalError. This should never happen, please report this bug.</p>
+</li>
+</ul>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../../../General/GetStarted/" class="btn btn-neutral float-left" title="Get Started"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../CommandLineArguments/" class="btn btn-neutral float-right" title="CommandLine Arguments">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/4rchXceed/MinLang" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../../../General/GetStarted/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../CommandLineArguments/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

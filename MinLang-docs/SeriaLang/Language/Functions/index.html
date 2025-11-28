@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>Functions - MinLang + SeriaLang Documentation</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Functions";
+        var mkdocs_page_input_path = "SeriaLang/Language/Functions.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> MinLang + SeriaLang Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../../General/GetStarted/">Get Started</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">SeriaLang</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" >Compiler</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Compiler/Exceptions/">Exceptions</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Compiler/CommandLineArguments/">CommandLine Arguments</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" >Language</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../Overview/">Overview</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Types/">Types</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Variables/">Variables</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Comments/">Comments</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">Functions</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#creation">Creation</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#closing-a-function">Closing a Function</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#function-parameters">Function Parameters</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#accessing-parameters">Accessing Parameters</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#return-values">Return Values</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#calling-functions">Calling Functions</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#main-function">Main Function</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#recursive-functions">Recursive Functions</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#function-naming">Function Naming</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#function-flags">Function Flags</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#ascode">ascode</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#the-self-global-variable">The self global variable</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../ULHC/">SeriaLang Header File</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../IfAndFor/">If And For Statements</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Import/">Importing</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Pointers/">Pointers</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Concat/">String Concat</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">MinLang</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" >Compiler</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../MinLang/Compiler/Exceptions/">Exceptions</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../MinLang/Compiler/CommandLineArguments/">CommandLine Arguments</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../MinLang/Overview/">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../MinLang/Limitations/">Limitations</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Libraries</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../MinLang/Libraries/stdlib/">stdlib</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../MinLang/Libraries/libmc/">mclib</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">MinLang + SeriaLang Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">SeriaLang</li>
+          <li class="breadcrumb-item">Language</li>
+      <li class="breadcrumb-item active">Functions</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/4rchXceed/MinLang-docs/tree/master/docs/SeriaLang/Language/Functions.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="functions">Functions</h1>
+<p>There's (like variables) a lot to say about functions.</p>
+<h2 id="creation">Creation</h2>
+<p>Functions are defined using the <code>fun</code> keyword, followed by the function name, parameters (if any), and a colon (<code>:</code>). The function body is indented below the function definition.</p>
+<pre><code class="language-ucl">fun MyFunction():
+    Print()&lt;&quot;Hello, World!&quot;&gt;
+MyFunction
+</code></pre>
+<h2 id="closing-a-function">Closing a Function</h2>
+<p>A function is closed by writing its name again on a new line, without any indentation.</p>
+<pre><code class="language-ucl">fun MyFunction():
+    Print()&lt;&quot;Hello, World!&quot;&gt;
+MyFunction
+</code></pre>
+<h2 id="function-parameters">Function Parameters</h2>
+<p>Function parameters are defined within the parentheses following the function name. Each parameter must have a name and a type.
+Parameters are separated by semicolons (<code>;</code>).</p>
+<pre><code class="language-ucl">fun Test(Int a; Int b;):
+    Print()&lt;&quot;1&quot;&gt;
+Test
+</code></pre>
+<p>Parameters can be of any type, including <code>Void</code> (yes).
+No default values for parameters.</p>
+<h3 id="accessing-parameters">Accessing Parameters</h3>
+<p>A parameter is a local variable, so you can access it using the <code>#::</code> prefix:</p>
+<pre><code class="language-ucl">fun Test(Int a; Int b;):
+    #::a::Add(1)  // Adds 1 to the parameter 'a'
+Test
+</code></pre>
+<h2 id="return-values">Return Values</h2>
+<p>Not yet supported, but will be in the future.</p>
+<h2 id="calling-functions">Calling Functions</h2>
+<p>To call a function, simply write its name followed by parentheses and angle brackets. If the function has parameters, provide the arguments within the angle brackets, separated by semicolons (<code>;</code>).</p>
+<pre><code class="language-ucl">fun Greet(String name):
+    Print()&lt;&quot;Hello, &quot; + #::name + &quot;!&quot;&gt;
+Greet
+
+fun Main():
+    Greet()&lt;&quot;Alice&quot;&gt;
+Main
+</code></pre>
+<p>If the function has no parameters, you can call it with empty angle brackets:</p>
+<pre><code class="language-ucl">fun SayHello():
+    Print()&lt;&quot;Hello!&quot;&gt;
+SayHello
+
+fun Main():
+    SayHello&lt;&gt;
+Main
+</code></pre>
+<h2 id="main-function">Main Function</h2>
+<p>The <code>Main</code> function is a special function that serves as the entry point of the program. It is called automatically when the program starts.</p>
+<pre><code class="language-ucl">fun Main():
+    Print()&lt;&quot;This is the main function!&quot;&gt;
+Main
+</code></pre>
+<p>You can have only one <code>Main</code> function in your program.</p>
+<h2 id="recursive-functions">Recursive Functions</h2>
+<p>Functions cannot call themselves directly (no direct recursion). However, you can achieve recursion by using an intermediary function.</p>
+<pre><code class="language-ucl">fun MainCall():
+    Main()&lt;&gt;
+MainCall
+
+fun Main():
+    MainCall()&lt;&gt;
+Main
+</code></pre>
+<h2 id="function-naming">Function Naming</h2>
+<p>Function names must start with a letter (a-z, A-Z) or an underscore (<code>_</code>), followed by any combination of letters, digits (0-9), or underscores. Function names are case-sensitive.</p>
+<pre><code class="language-ucl">fun myFunction():
+    Print()&lt;&quot;This is my function!&quot;&gt;
+myFunction
+</code></pre>
+<h2 id="function-flags">Function Flags</h2>
+<p>Functions can have flags that modify their behavior. Flags are specified before the <code>fun</code> keyword.</p>
+<h3 id="ascode">ascode</h3>
+<p>The <code>ascode</code> flag indicates that the function should copy it's code, and hardcode every parameters when called.
+What does that mean?</p>
+<p>When you call a function with the <code>ascode</code> flag, the function's code is copied and pasted in a new function (name[nbr_of_functions]), with all parameters replaced by their actual values.
+Why?
+As you know, Minecraft supports only Int local variables. So if you want to use a function with parameters other than Int (e.g. String), you need to use the <code>ascode</code> flag.</p>
+<p>Limitation: You cannot change the value of a parameter inside an <code>ascode</code> function. (Because it's hardcoded), nor call it with a value type that is not literal or global variable.</p>
+<pre><code class="language-ucl">ascode fun WhileGt(String var; Int value; String callback;):
+    If (#::{$::var} &gt; $::value): Execute()&lt;$::callback&gt;
+    If (#::{$::var} &gt; $::value): Execute()&lt;$::self&gt;
+WhileGt
+</code></pre>
+<h3 id="the-self-global-variable">The self global variable</h3>
+<p>The self global variable is a function pointer to the current function. It can be used to call the current function recursively (indirect recursion only).</p>
+<pre><code class="language-ucl">ascode fun WhileGt(String var; Int value; String callback;):
+    If (#::{$::var} &gt; $::value): Execute()&lt;$::callback&gt;
+    If (#::{$::var} &gt; $::value): Execute()&lt;$::self&gt;
+WhileGt
+</code></pre>
+<p>$::self is the function pointer to the current function (WhileGt in this case).</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../Comments/" class="btn btn-neutral float-left" title="Comments"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../ULHC/" class="btn btn-neutral float-right" title="SeriaLang Header File">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/4rchXceed/MinLang" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../Comments/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../ULHC/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
