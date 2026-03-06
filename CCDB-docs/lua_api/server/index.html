@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Server - CCDB-Docs</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Server";
+        var mkdocs_page_input_path = "lua_api/server.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> CCDB-Docs
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../app/">App Usage</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../queries/">Queries</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../minecraft/">Minecraft-specific usage</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../config/">Configuration</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../tools/">Dev tools</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Lua API</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../client/">Client</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Server</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#how-to-install">How to install</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#usage">Usage</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#api-reference">API Reference</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#runlibopendb">runlib.opendb</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#runlibrun">runlib.run</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#runlibsafe_val">runlib.safe_val</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Queries Specs</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../queries/insert/">Insert</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../queries/update/">Update</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../queries/delete/">Delete</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../queries/select/">Select</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../queries/where/">Where conditions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../queries/values/">Values</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Schema</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../schema/table/">Tables</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../schema/database/">Database</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">CCDB-Docs</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Lua API</li>
+      <li class="breadcrumb-item active">Server</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/4rchXceed/CCDB/edit/master/docs/lua_api/server.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="server-api">Server API</h1>
+<p>This document describes the API for the server side of CCDB. This is used when you don't want to create a server, but rather want to use the server functionality in your own code, for example caching some db datas into the client (like with SQLite in a real-world scenario)</p>
+<h2 id="how-to-install">How to install</h2>
+<p>Same as the server</p>
+<pre><code class="language-bash">bin setup
+</code></pre>
+<h2 id="usage">Usage</h2>
+<p>To use the server API, you need to require the <code>src/lib_ccdb.lua</code> file in your code:</p>
+<pre><code class="language-lua">local runlib = require(&quot;src/lib_ccdb&quot;)
+</code></pre>
+<h2 id="api-reference">API Reference</h2>
+<h3 id="runlibopendb">runlib.opendb</h3>
+<p>Description:
+Open a database.</p>
+<p>Args:
+- <code>name</code>: The name of the database to open</p>
+<p>Returns:
+- <code>db</code>: The opened database object, or nil if the database could not be opened</p>
+<p>Errors:
+- None (except for internal db errors)</p>
+<p>Returns:
+- nil</p>
+<pre><code class="language-lua">runlib.opendb(&quot;dbtest&quot;)
+</code></pre>
+<h3 id="runlibrun">runlib.run</h3>
+<p>Description:
+Run a query on the database.</p>
+<p>Args:
+- <code>query</code>: The query to run, as a string</p>
+<p>Returns:
+- <code>result</code>: The result of the query, as a table
+- <code>nil</code>: If the query failed, nil is returned, and an error message is printed to the console</p>
+<p>Errors:
+- None (except for internal db errors). If the query is invalid, an error message is printed to the console.</p>
+<pre><code class="language-lua">local result = runlib.run(&quot;SELECT * FROM users&quot;)
+</code></pre>
+<h3 id="runlibsafe_val">runlib.safe_val</h3>
+<p>Description:
+Sanitize a value for use in a query. This is used to prevent SQL injection attacks.</p>
+<p>Args:
+- <code>val</code>: The value to convert</p>
+<p>Returns:
+- <code>safe_val</code>: The sanitized value, as a string</p>
+<p>Errors:
+- None</p>
+<pre><code class="language-lua">local safe_val = runlib.safe_val(&quot;O'Reilly&quot;)
+-- safe_val will be &quot;OReilly&quot;
+</code></pre>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../client/" class="btn btn-neutral float-left" title="Client"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../queries/insert/" class="btn btn-neutral float-right" title="Insert">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/4rchXceed/CCDB" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../client/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../../queries/insert/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Tables - CCDB-Docs</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Tables";
+        var mkdocs_page_input_path = "schema/table.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> CCDB-Docs
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../app/">App Usage</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../queries/">Queries</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../minecraft/">Minecraft-specific usage</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../config/">Configuration</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../tools/">Dev tools</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Lua API</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../lua_api/client/">Client</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../lua_api/server/">Server</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Queries Specs</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../queries/insert/">Insert</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../queries/update/">Update</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../queries/delete/">Delete</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../queries/select/">Select</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../queries/where/">Where conditions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../queries/values/">Values</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Schema</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Tables</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#the-json-schema-for-a-table-is-this">The json schema for a table is this:</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#explanation">Explanation</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#indexes">Indexes</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#primary-key-pk">Primary key (pk)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#unique-key-unique">Unique key (unique)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#auto-incrementing-key-ai">Auto-incrementing key (ai)</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#fields">Fields</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#supported">Supported</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#nullable">Nullable</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#default">Default</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#data">Data</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../database/">Database</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">CCDB-Docs</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Schema</li>
+      <li class="breadcrumb-item active">Tables</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/4rchXceed/CCDB/edit/master/docs/schema/table.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="table-schema">Table schema</h1>
+<h2 id="the-json-schema-for-a-table-is-this">The json schema for a table is this:</h2>
+<pre><code class="language-json">{
+  &quot;schema&quot;: {
+    &quot;current_sysid&quot;: 1,
+    &quot;name&quot;: &quot;item&quot;,
+    &quot;indexes&quot;: [
+      {
+        &quot;field&quot;: &quot;id&quot;,
+        &quot;type&quot;: &quot;pk&quot;
+      },
+      {
+        &quot;field&quot;: &quot;item_id&quot;,
+        &quot;type&quot;: &quot;unique&quot;
+      },
+      {
+        &quot;field&quot;: &quot;id&quot;,
+        &quot;type&quot;: &quot;ai&quot;,
+        &quot;start&quot;: 1,
+        &quot;current&quot;: 1
+      }
+    ],
+    &quot;fields&quot;: {
+      &quot;id&quot;: {
+        &quot;type&quot;: [&quot;integer&quot;],
+        &quot;nullable&quot;: false,
+        &quot;default&quot;: null
+      },
+      &quot;item_id&quot;: {
+        &quot;type&quot;: [&quot;varchar&quot;, 50],
+        &quot;nullable&quot;: false,
+        &quot;default&quot;: null
+      },
+      &quot;item_count&quot;: {
+        &quot;type&quot;: [&quot;integer&quot;],
+        &quot;nullable&quot;: true,
+        &quot;default&quot;: 0
+      }
+    }
+  },
+  &quot;data&quot;: [
+    {
+      &quot;?sysid?&quot;: 1,
+      &quot;id&quot;: 1,
+      &quot;item_id&quot;: &quot;minecraft:stone&quot;,
+      &quot;item_count&quot;: 64
+    },
+    {
+      &quot;?sysid?&quot;: 2,
+      &quot;id&quot;: 2,
+      &quot;item_id&quot;: &quot;minecraft:dirt&quot;,
+      &quot;item_count&quot;: 32
+    }
+  ]
+}
+</code></pre>
+<h2 id="explanation">Explanation</h2>
+<ul>
+<li><code>schema</code>: The structure of the table</li>
+<li><code>current_sysid</code>: The current system id, used for internal purposes (auto-incrementing)</li>
+<li><code>name</code>: The name of the table (unused, left because idk why)</li>
+<li><code>indexes</code>: The indexes of the table, an array of objects</li>
+<li><code>fields</code>: The fields of the table, an object</li>
+<li><code>data</code>: The data of the table, an array of objects (each object is a row)</li>
+</ul>
+<h3 id="indexes">Indexes</h3>
+<h4 id="primary-key-pk">Primary key (pk)</h4>
+<p>The primary key index is used to uniquely identify each row in the table. It is defined by setting the <code>type</code> to <code>pk</code> and specifying the <code>field</code> that will be used as the primary key.</p>
+<p>Example:</p>
+<pre><code class="language-json">{
+  &quot;field&quot;: &quot;id&quot;,
+  &quot;type&quot;: &quot;pk&quot;
+}
+</code></pre>
+<h4 id="unique-key-unique">Unique key (unique)</h4>
+<p>The unique key index is used to ensure that all values in a column are different from each other. It is defined by setting the <code>type</code> to <code>unique</code> and specifying the <code>field</code> that will be used as the unique key.</p>
+<p>Example:</p>
+<pre><code class="language-json">{
+  &quot;field&quot;: &quot;item_id&quot;,
+  &quot;type&quot;: &quot;unique&quot;
+}
+</code></pre>
+<h4 id="auto-incrementing-key-ai">Auto-incrementing key (ai)</h4>
+<p>The AI key index is used to automatically generate a unique value for each new row inserted into the table. It is defined by setting the <code>type</code> to <code>ai</code>. The <code>field</code> specifies the column that will be auto-incremented, <code>start</code> specifies the starting value, and <code>current</code> keeps track of the current value.</p>
+<p>Example:</p>
+<pre><code class="language-json">{
+  &quot;field&quot;: &quot;id&quot;,
+  &quot;type&quot;: &quot;ai&quot;,
+  &quot;start&quot;: 1,
+  &quot;current&quot;: 1
+}
+</code></pre>
+<h3 id="fields">Fields</h3>
+<p>Each field in the <code>fields</code> object represents a column in the table.</p>
+<ul>
+<li>key: The name of the column</li>
+<li>type: The data type of the column (e.g., integer, varchar) in an array. The first element is the type name, and the second element (optional) can specify additional parameters (e.g., maximum length for varchar).</li>
+</ul>
+<h3 id="supported">Supported</h3>
+<ul>
+<li><code>int</code>: A whole number (e.g., 1, 2, 3)</li>
+<li><code>varchar</code>: A string of characters (e.g., "hello", "world"). The maximum length can be specified as a second element in the type array (e.g., <code>["varchar", 50]</code> for a maximum length of 50 characters).</li>
+<li><code>float</code>: A number with a decimal point (e.g., 3.14, 2.718)</li>
+<li><code>boolean</code>: A true or false value (e.g., true, false)</li>
+<li><code>null</code>: Do you really want to use it?</li>
+<li><code>text</code>: A varchar, but with no maximum length (e.g., "This is a long text that can be of any length.")</li>
+</ul>
+<h3 id="nullable">Nullable</h3>
+<p>The <code>nullable</code> property allows the value of the field to be null.</p>
+<h3 id="default">Default</h3>
+<p>The <code>default</code> property specifies the default value for the field if no value is provided during insertion.</p>
+<h2 id="data">Data</h2>
+<ul>
+<li><code>?sysid?</code>: This is an internal field used for auto-incrementing purposes. It should not be included in the data when inserting new rows, as it will be automatically generated by the system.</li>
+<li>Each object in the <code>data</code> array represents a row in the table, with key-value pairs corresponding to the column names and their respective values.</li>
+</ul>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../../queries/values/" class="btn btn-neutral float-left" title="Values"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../database/" class="btn btn-neutral float-right" title="Database">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/4rchXceed/CCDB" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../../queries/values/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../database/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
