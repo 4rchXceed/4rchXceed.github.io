@@ -69,7 +69,7 @@
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../Functions/">Functions</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../ULHC/">SeriaLang Header File</a>
+                <li class="toctree-l2"><a class="reference internal" href="../UCHC/">SeriaLang Header File</a>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../IfAndFor/">If And For Statements</a>
                 </li>
@@ -113,6 +113,11 @@
     </ul>
                   </li>
               </ul>
+              <p class="caption"><span class="caption-text">Zed Support</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../ZedLangSupport/Index/">Explaination of the Zed Editor Language Support</a>
+                  </li>
+              </ul>
       </div>
     </div>
     </nav>
@@ -142,7 +147,7 @@
                 <h1 id="importing">Importing</h1>
 <p>In SeriaLang, you can import other files using the <code>%import &lt;fname&gt;</code> keyword followed by the file path in quotes. This allows you to reuse code across multiple files and organize your project more effectively.</p>
 <h2 id="syntax">Syntax</h2>
-<pre><code class="language-ucl">%import path/to/your/file.seria
+<pre><code class="language-ucl">%import path/to/your/file.ucl # Or uchc
 </code></pre>
 <p>You can import multiple files by using multiple <code>%import</code> statements.
 You can also import files with different extensions, such as <code>.uchc</code> for Universal Language Header Code files.</p>
@@ -150,7 +155,7 @@ You can also import files with different extensions, such as <code>.uchc</code> 
 <h2 id="file-paths">File Paths</h2>
 <p>The file path can be relative, absolute or included in the command line arguments (see <a href="../../Compiler/CommandLineArguments/">CommandLineArguments.md</a>).:
 - <strong>Relative Path</strong>: The path is relative to the current file's location. For example, if your current file is located in <code>src/</code> and you want to import a file located in <code>src/lib/</code>, you would use <code>%import lib/file.ucl</code>.
-- <strong>Absolute Path</strong>: The full path to the file from the root of the filesystem. For example, <code>%import /home/user/project/src/lib/file.seria</code>.
+- <strong>Absolute Path</strong>: The full path to the file from the root of the filesystem. For example, <code>%import /home/user/project/src/lib/file.ucl</code>.
 - <strong>Included Paths</strong>: You can specify additional directories to search for imported files using the <code>-I&lt;path&gt;</code> command line argument when running the SeriaLang compiler. For example, if you have a directory <code>src/includes/</code> that contains files you want to import, you can run the compiler with <code>-Isrc/includes/</code> and then use <code>%import file.ucl</code> in your code.</p>
 <blockquote>
 <p>[!WARNING]
@@ -161,7 +166,7 @@ If two files with the same name are found in different included paths, I don't k
 <pre><code class="language-ucl">%import libmc/print.uchc
 
 fun Main():
-    Print(&quot;Hello, World!&quot;)
+    Print()&lt;&quot;Hello, World!&quot;&gt;
 Main
 </code></pre>
 <p><code>libmc/print.uchc</code>:</p>

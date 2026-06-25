@@ -69,7 +69,7 @@
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../../../SeriaLang/Language/Functions/">Functions</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../../SeriaLang/Language/ULHC/">SeriaLang Header File</a>
+                <li class="toctree-l2"><a class="reference internal" href="../../../SeriaLang/Language/UCHC/">SeriaLang Header File</a>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../../../SeriaLang/Language/IfAndFor/">If And For Statements</a>
                 </li>
@@ -102,9 +102,198 @@
                 </li>
                 <li class="toctree-l2 current"><a class="reference internal current" href="#">mclib</a>
     <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#file-libmcexecuteuchc">File: libmc/execute.uchc</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#function-execute">Function: Execute</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#file-libmcexecuteasuchc">File: libmc/executeas.uchc</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#function-as">Function: As</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#file-libmcdebuguchc">File: libmc/debug.uchc</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#function-debug">Function: Debug</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#file-libmcasatuchc">File: libmc/asat.uchc</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#function-asat">Function: AsAt</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#file-libmcprintuchc">File: libmc/print.uchc</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#function-print">Function: Print</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#file-libmcexecuteatuchc">File: libmc/executeat.uchc</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#function-at">Function: At</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#function-atanchored">Function: AtAnchored</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#file-libmcsummonuchc">File: libmc/summon.uchc</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#function-summon">Function: Summon</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#file-libmcblocksfilluchc">File: libmc/blocks/fill.uchc</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#function-fillblocks">Function: FillBlocks</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#file-libmcblockssetuchc">File: libmc/blocks/set.uchc</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#function-setblock">Function: SetBlock</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#file-libmcblocksnotuchc">File: libmc/blocks/not.uchc</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#function-ifnotblock">Function: IfNotBlock</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#file-libmcblockscloneuchc">File: libmc/blocks/clone.uchc</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#function-cloneblocks">Function: CloneBlocks</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#file-libmcentitymovetouchc">File: libmc/entity/moveto.uchc</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#function-moveto">Function: MoveTo</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#function-movetoxyz">Function: MoveToXYZ</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#file-libmcentitytpuchc">File: libmc/entity/tp.uchc</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#function-tpentity">Function: TpEntity</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#function-tpentityfacing">Function: TpEntityFacing</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#file-libmcentitytaguchc">File: libmc/entity/tag.uchc</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#function-addtag">Function: AddTag</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#function-removetag">Function: RemoveTag</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#file-libmcentitydamageuchc">File: libmc/entity/damage.uchc</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#function-damage">Function: Damage</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#file-libmcentitynotuchc">File: libmc/entity/not.uchc</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#function-notentity">Function: NotEntity</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#file-libmcentityinradiusuchc">File: libmc/entity/inradius.uchc</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#function-entityinradius">Function: EntityInRadius</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#function-entitynotinradius">Function: EntityNotInRadius</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#file-libmcentitykilluchc">File: libmc/entity/kill.uchc</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#function-kill">Function: Kill</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#file-libmcentitysummonuchc">File: libmc/entity/summon.uchc</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#function-summondata">Function: SummonData</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#function-summon_1">Function: Summon</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#function-summontag">Function: SummonTag</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#file-libmcplayerinhanducl">File: libmc/player/inhand.ucl</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#native-command-binding-inhand">Native Command binding: InHand</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#file-libmcplayerininventoryucl">File: libmc/player/ininventory.ucl</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#native-command-binding-ininventory">Native Command binding: InInventory</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#file-libmcplayerreplaceitemuchc">File: libmc/player/replaceitem.uchc</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#function-replaceitem">Function: ReplaceItem</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#file-libmcplayerclearuchc">File: libmc/player/clear.uchc</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#function-clear">Function: Clear</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#file-libmceventsregisteruchc">File: libmc/events/register.uchc</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#function-eventregisteruchc">Function: EventRegisterUCHC</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#file-libmceventsstopucl">File: libmc/events/stop.ucl</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#native-command-binding-stopevent">Native Command binding: StopEvent</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#file-libmceventseventucl">File: libmc/events/event.ucl</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#native-command-binding-evrunner">Native Command binding: EvRunner</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#native-command-binding-evregister">Native Command binding: EvRegister</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#file-libmceventsresetuchc">File: libmc/events/reset.uchc</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#function-evreset">Function: EvReset</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#file-libmcgeneralparticleuchc">File: libmc/general/particle.uchc</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#function-particle">Function: Particle</a>
+    </li>
+        </ul>
+    </li>
     </ul>
                 </li>
     </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Zed Support</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../ZedLangSupport/Index/">Explaination of the Zed Editor Language Support</a>
                   </li>
               </ul>
       </div>
@@ -133,12 +322,487 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="auto-generated-documentation-to-come-soon">Auto-Generated Documentation to come soon.</h1>
+                <h1 id="libmc-autogenerated-documentation-no-ai-human-written-comments-only">LibMC - Autogenerated Documentation (No AI, human-written comments only)</h1>
+<h2 id="file-libmcexecuteuchc">File: <code>libmc/execute.uchc</code></h2>
+<h3 id="function-execute">Function: <code>Execute</code></h3>
+<h4 id="arguments">Arguments</h4>
+<ul>
+<li><code>command</code>: <em>[Type]:</em> <code>String</code></li>
+</ul>
+<h4 id="description">Description</h4>
+<p>Simple run a command</p>
+<details>
+<summary>Show code (only available for UCHC files)</summary>
+?command?
+</details>
+
+<h2 id="file-libmcexecuteasuchc">File: <code>libmc/executeas.uchc</code></h2>
+<h3 id="function-as">Function: <code>As</code></h3>
+<h4 id="arguments_1">Arguments</h4>
+<ul>
+<li><code>as</code>: <em>[Type]:</em> <code>String</code></li>
+<li><code>command</code>: <em>[Type]:</em> <code>String</code></li>
+</ul>
+<h4 id="description_1">Description</h4>
+<p>Execute At</p>
+<details>
+<summary>Show code (only available for UCHC files)</summary>
+execute as ?as? run ?command?
+</details>
+
+<h2 id="file-libmcdebuguchc">File: <code>libmc/debug.uchc</code></h2>
+<h3 id="function-debug">Function: <code>Debug</code></h3>
+<h4 id="arguments_2">Arguments</h4>
+<h4 id="description_2">Description</h4>
+<p>Places a block of sea lantern above the block that contains the current code (helpful for debugging)</p>
+<details>
+<summary>Show code (only available for UCHC files)</summary>
+setblock ~ ~1 ~ sea_lantern
+</details>
+
+<h2 id="file-libmcasatuchc">File: <code>libmc/asat.uchc</code></h2>
+<h3 id="function-asat">Function: <code>AsAt</code></h3>
+<h4 id="arguments_3">Arguments</h4>
+<ul>
+<li><code>as</code>: <em>[Type]:</em> <code>String</code></li>
+<li><code>command</code>: <em>[Type]:</em> <code>String</code></li>
+</ul>
+<h4 id="description_3">Description</h4>
+<p>Execute At</p>
+<details>
+<summary>Show code (only available for UCHC files)</summary>
+execute as ?as? at @s run ?command?
+</details>
+
+<h2 id="file-libmcprintuchc">File: <code>libmc/print.uchc</code></h2>
+<h3 id="function-print">Function: <code>Print</code></h3>
+<h4 id="arguments_4">Arguments</h4>
+<ul>
+<li><code>message</code>: <em>[Type]:</em> <code>String</code></li>
+</ul>
+<h4 id="description_4">Description</h4>
+<p>Print</p>
+<details>
+<summary>Show code (only available for UCHC files)</summary>
+say ?message?
+</details>
+
+<h2 id="file-libmcexecuteatuchc">File: <code>libmc/executeat.uchc</code></h2>
+<h3 id="function-at">Function: <code>At</code></h3>
+<h4 id="arguments_5">Arguments</h4>
+<ul>
+<li><code>at</code>: <em>[Type]:</em> <code>String</code></li>
+<li><code>command</code>: <em>[Type]:</em> <code>String</code></li>
+</ul>
+<h4 id="description_5">Description</h4>
+<p>Execute At</p>
+<details>
+<summary>Show code (only available for UCHC files)</summary>
+execute at ?at? run ?command?
+</details>
+
+<h3 id="function-atanchored">Function: <code>AtAnchored</code></h3>
+<h4 id="arguments_6">Arguments</h4>
+<ul>
+<li><code>at</code>: <em>[Type]:</em> <code>String</code></li>
+<li><code>command</code>: <em>[Type]:</em> <code>String</code></li>
+</ul>
+<h4 id="description_6">Description</h4>
+<p>Execute At (anchored eyes)</p>
+<details>
+<summary>Show code (only available for UCHC files)</summary>
+execute at ?at? anchored eyes run ?command?
+</details>
+
+<h2 id="file-libmcsummonuchc">File: <code>libmc/summon.uchc</code></h2>
+<h3 id="function-summon">Function: <code>Summon</code></h3>
+<h4 id="arguments_7">Arguments</h4>
+<ul>
+<li><code>entity</code>: <em>[Type]:</em> <code>String</code></li>
+<li><code>x</code>: <em>[Type]:</em> <code>String</code></li>
+<li><code>y</code>: <em>[Type]:</em> <code>String</code></li>
+<li><code>z</code>: <em>[Type]:</em> <code>String</code></li>
+</ul>
+<h4 id="description_7">Description</h4>
+<p>Summon command</p>
+<details>
+<summary>Show code (only available for UCHC files)</summary>
+summon ?entity? ?x? ?y? ?z?
+</details>
+
+<h2 id="file-libmcblocksfilluchc">File: <code>libmc/blocks/fill.uchc</code></h2>
+<h3 id="function-fillblocks">Function: <code>FillBlocks</code></h3>
+<h4 id="arguments_8">Arguments</h4>
+<ul>
+<li><code>pos1</code>: <em>[Type]:</em> <code>String</code></li>
+<li><code>pos2</code>: <em>[Type]:</em> <code>String</code></li>
+<li><code>blockType</code>: <em>[Type]:</em> <code>String</code></li>
+</ul>
+<h4 id="description_8">Description</h4>
+<p>/fill wrapper</p>
+<details>
+<summary>Show code (only available for UCHC files)</summary>
+fill ?pos1? ?pos2? ?blockType? replace
+</details>
+
+<h2 id="file-libmcblockssetuchc">File: <code>libmc/blocks/set.uchc</code></h2>
+<h3 id="function-setblock">Function: <code>SetBlock</code></h3>
+<h4 id="arguments_9">Arguments</h4>
+<ul>
+<li><code>pos</code>: <em>[Type]:</em> <code>String</code></li>
+<li><code>blockType</code>: <em>[Type]:</em> <code>String</code></li>
+</ul>
+<h4 id="description_9">Description</h4>
+<p>/setblock</p>
+<details>
+<summary>Show code (only available for UCHC files)</summary>
+setblock ?pos? ?blockType? replace
+</details>
+
+<h2 id="file-libmcblocksnotuchc">File: <code>libmc/blocks/not.uchc</code></h2>
+<h3 id="function-ifnotblock">Function: <code>IfNotBlock</code></h3>
+<h4 id="arguments_10">Arguments</h4>
+<ul>
+<li><code>pos</code>: <em>[Type]:</em> <code>String</code></li>
+<li><code>blockType</code>: <em>[Type]:</em> <code>String</code></li>
+<li><code>command</code>: <em>[Type]:</em> <code>String</code></li>
+</ul>
+<h4 id="description_10">Description</h4>
+<p>Run if the block is not a specific block</p>
+<details>
+<summary>Show code (only available for UCHC files)</summary>
+execute unless block ?pos? ?blockType? run ?command?
+</details>
+
+<h2 id="file-libmcblockscloneuchc">File: <code>libmc/blocks/clone.uchc</code></h2>
+<h3 id="function-cloneblocks">Function: <code>CloneBlocks</code></h3>
+<h4 id="arguments_11">Arguments</h4>
+<ul>
+<li><code>pos1</code>: <em>[Type]:</em> <code>String</code></li>
+<li><code>pos2</code>: <em>[Type]:</em> <code>String</code></li>
+<li><code>pos3</code>: <em>[Type]:</em> <code>String</code></li>
+</ul>
+<h4 id="description_11">Description</h4>
+<p>/clone wrapper</p>
+<details>
+<summary>Show code (only available for UCHC files)</summary>
+clone ?pos1? ?pos2? ?pos3? replace force
+</details>
+
+<h2 id="file-libmcentitymovetouchc">File: <code>libmc/entity/moveto.uchc</code></h2>
+<h3 id="function-moveto">Function: <code>MoveTo</code></h3>
+<h4 id="arguments_12">Arguments</h4>
+<ul>
+<li><code>source</code>: <em>[Type]:</em> <code>String</code></li>
+<li><code>dest</code>: <em>[Type]:</em> <code>String</code></li>
+<li><code>speed</code>: <em>[Type]:</em> <code>Float</code></li>
+</ul>
+<h4 id="description_12">Description</h4>
+<p>Move an entity to another (useful for projectiles) (dest needs to be limit=1)</p>
+<details>
+<summary>Show code (only available for UCHC files)</summary>
+execute as ?source? at ?source? run tp @s ^ ^ ^?speed? facing entity ?dest?
+</details>
+
+<h3 id="function-movetoxyz">Function: <code>MoveToXYZ</code></h3>
+<h4 id="arguments_13">Arguments</h4>
+<ul>
+<li><code>source</code>: <em>[Type]:</em> <code>String</code></li>
+<li><code>dest</code>: <em>[Type]:</em> <code>String</code></li>
+<li><code>xyz</code>: <em>[Type]:</em> <code>String</code></li>
+</ul>
+<h4 id="description_13">Description</h4>
+<p>No description provided</p>
+<details>
+<summary>Show code (only available for UCHC files)</summary>
+execute as ?source? at ?source? run tp @s ?xyz? facing entity ?dest?
+</details>
+
+<h2 id="file-libmcentitytpuchc">File: <code>libmc/entity/tp.uchc</code></h2>
+<h3 id="function-tpentity">Function: <code>TpEntity</code></h3>
+<h4 id="arguments_14">Arguments</h4>
+<ul>
+<li><code>entitySelector</code>: <em>[Type]:</em> <code>String</code></li>
+<li><code>xyz</code>: <em>[Type]:</em> <code>String</code></li>
+</ul>
+<h4 id="description_14">Description</h4>
+<p>TP (source, x, y, z)</p>
+<details>
+<summary>Show code (only available for UCHC files)</summary>
+tp ?entitySelector? ?xyz?
+</details>
+
+<h3 id="function-tpentityfacing">Function: <code>TpEntityFacing</code></h3>
+<h4 id="arguments_15">Arguments</h4>
+<ul>
+<li><code>entitySelector</code>: <em>[Type]:</em> <code>String</code></li>
+<li><code>xyz</code>: <em>[Type]:</em> <code>String</code></li>
+<li><code>facingEntity</code>: <em>[Type]:</em> <code>String</code></li>
+</ul>
+<h4 id="description_15">Description</h4>
+<p>TP (With facing)</p>
+<details>
+<summary>Show code (only available for UCHC files)</summary>
+tp ?entitySelector? ?xyz? facing entity ?facingEntity?
+</details>
+
+<h2 id="file-libmcentitytaguchc">File: <code>libmc/entity/tag.uchc</code></h2>
+<h3 id="function-addtag">Function: <code>AddTag</code></h3>
+<h4 id="arguments_16">Arguments</h4>
+<ul>
+<li><code>entity</code>: <em>[Type]:</em> <code>String</code></li>
+<li><code>tag</code>: <em>[Type]:</em> <code>String</code></li>
+</ul>
+<h4 id="description_16">Description</h4>
+<p>Wrapper for /tag
+Add</p>
+<details>
+<summary>Show code (only available for UCHC files)</summary>
+tag ?entity? add ?tag?
+</details>
+
+<h3 id="function-removetag">Function: <code>RemoveTag</code></h3>
+<h4 id="arguments_17">Arguments</h4>
+<ul>
+<li><code>entity</code>: <em>[Type]:</em> <code>String</code></li>
+<li><code>tag</code>: <em>[Type]:</em> <code>String</code></li>
+</ul>
+<h4 id="description_17">Description</h4>
+<p>Remove</p>
+<details>
+<summary>Show code (only available for UCHC files)</summary>
+tag ?entity? remove ?tag?
+</details>
+
+<h2 id="file-libmcentitydamageuchc">File: <code>libmc/entity/damage.uchc</code></h2>
+<h3 id="function-damage">Function: <code>Damage</code></h3>
+<h4 id="arguments_18">Arguments</h4>
+<ul>
+<li><code>number</code>: <em>[Type]:</em> <code>String</code></li>
+</ul>
+<h4 id="description_18">Description</h4>
+<p>Damage of X damage</p>
+<details>
+<summary>Show code (only available for UCHC files)</summary>
+damage @s ?number?
+</details>
+
+<h2 id="file-libmcentitynotuchc">File: <code>libmc/entity/not.uchc</code></h2>
+<h3 id="function-notentity">Function: <code>NotEntity</code></h3>
+<h4 id="arguments_19">Arguments</h4>
+<ul>
+<li><code>selector</code>: <em>[Type]:</em> <code>String</code></li>
+<li><code>command</code>: <em>[Type]:</em> <code>String</code></li>
+</ul>
+<h4 id="description_19">Description</h4>
+<p>Execute if the entity DOESN'T exists</p>
+<details>
+<summary>Show code (only available for UCHC files)</summary>
+execute unless entity ?selector? run ?command?
+</details>
+
+<h2 id="file-libmcentityinradiusuchc">File: <code>libmc/entity/inradius.uchc</code></h2>
+<h3 id="function-entityinradius">Function: <code>EntityInRadius</code></h3>
+<h4 id="arguments_20">Arguments</h4>
+<ul>
+<li><code>maxDistance</code>: <em>[Type]:</em> <code>String</code></li>
+<li><code>command</code>: <em>[Type]:</em> <code>String</code></li>
+<li><code>entitySelector</code>: <em>[Type]:</em> <code>String</code></li>
+</ul>
+<h4 id="description_20">Description</h4>
+<p>Is there an entity in the radius? (entitySelector for e.g.: tag=!Tag,type=player)</p>
+<details>
+<summary>Show code (only available for UCHC files)</summary>
+execute at @s as @e[distance=..?maxDistance?,?entitySelector?] run ?command?
+</details>
+
+<h3 id="function-entitynotinradius">Function: <code>EntityNotInRadius</code></h3>
+<h4 id="arguments_21">Arguments</h4>
+<ul>
+<li><code>maxDistance</code>: <em>[Type]:</em> <code>String</code></li>
+<li><code>command</code>: <em>[Type]:</em> <code>String</code></li>
+<li><code>entitySelector</code>: <em>[Type]:</em> <code>String</code></li>
+</ul>
+<h4 id="description_21">Description</h4>
+<p>"Not" version</p>
+<details>
+<summary>Show code (only available for UCHC files)</summary>
+execute at @s unless entity @e[distance=..?maxDistance?,?entitySelector?] run ?command?
+</details>
+
+<h2 id="file-libmcentitykilluchc">File: <code>libmc/entity/kill.uchc</code></h2>
+<h3 id="function-kill">Function: <code>Kill</code></h3>
+<h4 id="arguments_22">Arguments</h4>
+<ul>
+<li><code>entity</code>: <em>[Type]:</em> <code>String</code></li>
+</ul>
+<h4 id="description_22">Description</h4>
+<p>Kill</p>
+<details>
+<summary>Show code (only available for UCHC files)</summary>
+kill ?entity?
+</details>
+
+<h2 id="file-libmcentitysummonuchc">File: <code>libmc/entity/summon.uchc</code></h2>
+<h3 id="function-summondata">Function: <code>SummonData</code></h3>
+<h4 id="arguments_23">Arguments</h4>
+<ul>
+<li><code>entityMcId</code>: <em>[Type]:</em> <code>String</code></li>
+<li><code>xyz</code>: <em>[Type]:</em> <code>String</code></li>
+<li><code>data</code>: <em>[Type]:</em> <code>String</code></li>
+</ul>
+<h4 id="description_23">Description</h4>
+<p>Summon (with NBT)</p>
+<details>
+<summary>Show code (only available for UCHC files)</summary>
+summon ?entityMcId? ?xyz? ?data?
+</details>
+
+<h3 id="function-summon_1">Function: <code>Summon</code></h3>
+<h4 id="arguments_24">Arguments</h4>
+<ul>
+<li><code>entityMcId</code>: <em>[Type]:</em> <code>String</code></li>
+<li><code>xyz</code>: <em>[Type]:</em> <code>String</code></li>
+</ul>
+<h4 id="description_24">Description</h4>
+<p>Summon (without any data)</p>
+<details>
+<summary>Show code (only available for UCHC files)</summary>
+summon ?entityMcId? ?xyz?
+</details>
+
+<h3 id="function-summontag">Function: <code>SummonTag</code></h3>
+<h4 id="arguments_25">Arguments</h4>
+<ul>
+<li><code>entityMcId</code>: <em>[Type]:</em> <code>String</code></li>
+<li><code>xyz</code>: <em>[Type]:</em> <code>String</code></li>
+<li><code>tag</code>: <em>[Type]:</em> <code>String</code></li>
+</ul>
+<h4 id="description_25">Description</h4>
+<p>Summon (without any data)</p>
+<details>
+<summary>Show code (only available for UCHC files)</summary>
+summon ?entityMcId? ?xyz? {Tags:['?tag?']}
+</details>
+
+<h2 id="file-libmcplayerinhanducl">File: <code>libmc/player/inhand.ucl</code></h2>
+<h3 id="native-command-binding-inhand">Native Command binding: <code>InHand</code></h3>
+<h4 id="arguments_26">Arguments</h4>
+<ul>
+<li><code>inHandMcId</code>: <em>[Type]:</em> <code>String</code></li>
+<li><code>inHandCallback</code>: <em>[Type]:</em> <code>String</code></li>
+</ul>
+<h4 id="description_26">Description</h4>
+<p>Checks if "inHandMcId" is in the player's hand</p>
+<h2 id="file-libmcplayerininventoryucl">File: <code>libmc/player/ininventory.ucl</code></h2>
+<h3 id="native-command-binding-ininventory">Native Command binding: <code>InInventory</code></h3>
+<h4 id="arguments_27">Arguments</h4>
+<ul>
+<li><code>inInventoryMcId</code>: <em>[Type]:</em> <code>String</code></li>
+<li><code>inInventoryCallback</code>: <em>[Type]:</em> <code>String</code></li>
+</ul>
+<h4 id="description_27">Description</h4>
+<p>Checks if "inHandMcId" is in the player's hand</p>
+<h2 id="file-libmcplayerreplaceitemuchc">File: <code>libmc/player/replaceitem.uchc</code></h2>
+<h3 id="function-replaceitem">Function: <code>ReplaceItem</code></h3>
+<h4 id="arguments_28">Arguments</h4>
+<ul>
+<li><code>selector</code>: <em>[Type]:</em> <code>String</code></li>
+<li><code>newItem</code>: <em>[Type]:</em> <code>String</code></li>
+</ul>
+<h4 id="description_28">Description</h4>
+<p>/item replace</p>
+<details>
+<summary>Show code (only available for UCHC files)</summary>
+item replace entity ?selector? weapon with ?newItem?
+</details>
+
+<h2 id="file-libmcplayerclearuchc">File: <code>libmc/player/clear.uchc</code></h2>
+<h3 id="function-clear">Function: <code>Clear</code></h3>
+<h4 id="arguments_29">Arguments</h4>
+<ul>
+<li><code>itemId</code>: <em>[Type]:</em> <code>String</code></li>
+<li><code>number</code>: <em>[Type]:</em> <code>String</code></li>
+</ul>
+<h4 id="description_29">Description</h4>
+<p>Clear X item to the player</p>
+<details>
+<summary>Show code (only available for UCHC files)</summary>
+clear @a ?itemId? ?number?
+</details>
+
+<h2 id="file-libmceventsregisteruchc">File: <code>libmc/events/register.uchc</code></h2>
+<h3 id="function-eventregisteruchc">Function: <code>EventRegisterUCHC</code></h3>
+<h4 id="arguments_30">Arguments</h4>
+<ul>
+<li><code>varName</code>: <em>[Type]:</em> <code>String</code></li>
+<li><code>event</code>: <em>[Type]:</em> <code>String</code></li>
+</ul>
+<h4 id="description_30">Description</h4>
+<p>Register an Event</p>
+<details>
+<summary>Show code (only available for UCHC files)</summary>
+scoreboard objectives add __sys_event_?varName? ?event?
+</details>
+
+<h2 id="file-libmceventsstopucl">File: <code>libmc/events/stop.ucl</code></h2>
+<h3 id="native-command-binding-stopevent">Native Command binding: <code>StopEvent</code></h3>
+<h4 id="arguments_31">Arguments</h4>
+<ul>
+<li><code>stopEventScoreboardName</code>: <em>[Type]:</em> <code>String</code></li>
+</ul>
+<h4 id="description_31">Description</h4>
+<p>No description provided</p>
+<h2 id="file-libmceventseventucl">File: <code>libmc/events/event.ucl</code></h2>
+<h3 id="native-command-binding-evrunner">Native Command binding: <code>EvRunner</code></h3>
+<h4 id="arguments_32">Arguments</h4>
+<ul>
+<li><code>evRunnerScoreboardName</code>: <em>[Type]:</em> <code>String</code></li>
+<li><code>evRunnerCallback</code>: <em>[Type]:</em> <code>String</code></li>
+</ul>
+<h4 id="description_32">Description</h4>
+<p>No description provided</p>
+<h3 id="native-command-binding-evregister">Native Command binding: <code>EvRegister</code></h3>
+<h4 id="arguments_33">Arguments</h4>
+<ul>
+<li><code>evRegisterScoreboardName</code>: <em>[Type]:</em> <code>String</code></li>
+<li><code>evRegisterEvent</code>: <em>[Type]:</em> <code>String</code></li>
+<li><code>evRegisterCallback</code>: <em>[Type]:</em> <code>String</code></li>
+</ul>
+<h4 id="description_33">Description</h4>
+<p>No description provided</p>
+<h2 id="file-libmceventsresetuchc">File: <code>libmc/events/reset.uchc</code></h2>
+<h3 id="function-evreset">Function: <code>EvReset</code></h3>
+<h4 id="arguments_34">Arguments</h4>
+<ul>
+<li><code>evName</code>: <em>[Type]:</em> <code>String</code></li>
+</ul>
+<h4 id="description_34">Description</h4>
+<p>Event "reset" command</p>
+<details>
+<summary>Show code (only available for UCHC files)</summary>
+scoreboard players reset @a __sys_event_?evName?
+</details>
+
+<h2 id="file-libmcgeneralparticleuchc">File: <code>libmc/general/particle.uchc</code></h2>
+<h3 id="function-particle">Function: <code>Particle</code></h3>
+<h4 id="arguments_35">Arguments</h4>
+<ul>
+<li><code>name</code>: <em>[Type]:</em> <code>String</code></li>
+<li><code>xyz</code>: <em>[Type]:</em> <code>String</code></li>
+</ul>
+<h4 id="description_35">Description</h4>
+<p>/particle</p>
+<details>
+<summary>Show code (only available for UCHC files)</summary>
+particle ?name? ?xyz?
+</details>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
         <a href="../stdlib/" class="btn btn-neutral float-left" title="stdlib"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../../ZedLangSupport/Index/" class="btn btn-neutral float-right" title="Explaination of the Zed Editor Language Support">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -167,6 +831,8 @@
     
       <span><a href="../stdlib/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
+    
+      <span><a href="../../../ZedLangSupport/Index/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>

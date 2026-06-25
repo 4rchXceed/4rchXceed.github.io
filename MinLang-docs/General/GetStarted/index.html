@@ -81,7 +81,7 @@
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../../SeriaLang/Language/Functions/">Functions</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../SeriaLang/Language/ULHC/">SeriaLang Header File</a>
+                <li class="toctree-l2"><a class="reference internal" href="../../SeriaLang/Language/UCHC/">SeriaLang Header File</a>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../../SeriaLang/Language/IfAndFor/">If And For Statements</a>
                 </li>
@@ -117,6 +117,11 @@
     </ul>
                   </li>
               </ul>
+              <p class="caption"><span class="caption-text">Zed Support</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../ZedLangSupport/Index/">Explaination of the Zed Editor Language Support</a>
+                  </li>
+              </ul>
       </div>
     </div>
     </nav>
@@ -146,10 +151,24 @@
 <h2 id="install-the-compiler">Install the compiler</h2>
 <p>You can download the latest release of the compiler from the <a href="https://github.com/4rchXceed/MinLang/releases">releases page</a></p>
 <h2 id="run-the-compiler">Run the compiler</h2>
-<p>In each release you'll find these files:
-- *.dll, .pdb, .json: .NET assemblies required to run the compiler
-- run.sh: Bash script to run the compiler on Linux/MacOS
-- run.ps1: PowerShell script to run the compiler on Windows</p>
+<p>In each release you'll find these files:</p>
+<ul>
+<li>
+<p>*.dll, .pdb, .json: .NET assemblies required to run the compiler</p>
+</li>
+<li>
+<p>run.sh: Bash script to run the compiler on Linux/MacOS</p>
+</li>
+<li>
+<p>run.ps1: PowerShell script to run the compiler on Windows</p>
+</li>
+<li>
+<p>Some libs to help you out</p>
+</li>
+<li>
+<p>Zed language extension (install only works on Linux)</p>
+</li>
+</ul>
 <h2 id="create-your-first-program">Create your first program</h2>
 <p>Create a file named <code>hello.ucl</code> in a folder named <code>projet1</code> and add the following code:</p>
 <pre><code>%import print.uchc
@@ -158,11 +177,17 @@ fun Main():
     Print()&lt;&quot;Hello World&quot;&gt;
 Main
 </code></pre>
-<p>Then run the compiler with:
-- On Linux/MacOS:
-<code>./run.sh projet1/hello.ucl &lt;coordinates&gt;</code>
-- On Windows:
+<p>Then run the compiler with:</p>
+<ul>
+<li>
+<p>On Linux/MacOS:
+<code>./run.sh projet1/hello.ucl &lt;coordinates&gt;</code></p>
+</li>
+<li>
+<p>On Windows:
 <code>.\run.ps1 projet1/hello.ucl &lt;coordinates&gt;</code></p>
+</li>
+</ul>
 <p>coordinates: The coordinates where you want the command blocks to be generated (format: x,y,z)</p>
 <p>(The Main function is the entry point of the program) -&gt; <a href="../../SeriaLang/Language/Functions/">Functions</a></p>
 <p>You should see a folder named <code>bin</code> with a file named <code>main</code> inside, containing the generated Minecraft command(s).</p>

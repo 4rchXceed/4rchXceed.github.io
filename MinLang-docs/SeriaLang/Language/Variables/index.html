@@ -87,13 +87,15 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#function-call-as-value-function-pointers">Function call as value (Function pointers)</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#global-to-local-variable-pointer">Global to local variable pointer</a>
+    </li>
     </ul>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../Comments/">Comments</a>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../Functions/">Functions</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../ULHC/">SeriaLang Header File</a>
+                <li class="toctree-l2"><a class="reference internal" href="../UCHC/">SeriaLang Header File</a>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../IfAndFor/">If And For Statements</a>
                 </li>
@@ -127,6 +129,11 @@
                 <li class="toctree-l2"><a class="reference internal" href="../../../MinLang/Libraries/libmc/">mclib</a>
                 </li>
     </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Zed Support</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../ZedLangSupport/Index/">Explaination of the Zed Editor Language Support</a>
                   </li>
               </ul>
       </div>
@@ -179,7 +186,7 @@ They can be of any type, including <code>Void</code> (yes).
 Their value type can be a literal, another global variable, or a "code block" (function call code).</p>
 <h3 id="access">Access</h3>
 <p>To access a global variable, just use its name with a <code>$::</code> prefix:</p>
-<pre><code class="language-ucl">print($::printText)
+<pre><code class="language-ucl">print()&lt;$::printText&gt;
 </code></pre>
 <h2 id="local-variables">Local Variables</h2>
 <p>Local variables are defined inside a function or block. They can only be accessed from within the function or block they are defined in.</p>
@@ -195,13 +202,13 @@ You cannot (yet) pass a local variable as a parameter to a function. (I will imp
 <p>Their value needs to be defined at the moment of declaration, and they can be changed later.</p>
 <h3 id="access_1">Access</h3>
 <p>To access a global variable, just use its name with a <code>#::</code> prefix:</p>
-<pre><code class="language-ucl">Print(#::myLocalVar)
+<pre><code class="language-ucl">print()&lt;$::printText&gt;
 </code></pre>
 <h3 id="modifying">Modifying</h3>
 <p>To modify a local variable, just use its name with a <code>#::</code> prefix and then <code>::Set</code>, <code>::Add</code>, <code>::Sub</code>:</p>
-<pre><code class="language-ucl">#::myLocalVar::Set(5)  // Sets the variable to 5
-#::myLocalVar::Add(3)  // Adds 3 to the variable (now it's 8)
-#::myLocalVar::Sub(2)  // Subtracts 2 from the variable (now it's 6)
+<pre><code class="language-ucl">#::myLocalVar::Set()&lt;5&gt;  // Sets the variable to 5
+#::myLocalVar::Add()&lt;3&gt;  // Adds 3 to the variable (now it's 8)
+#::myLocalVar::Sub()&lt;2&gt;  // Subtracts 2 from the variable (now it's 6)
 </code></pre>
 <p>I'm planning to implement more operations like <code>Mul</code>, <code>Div</code>, etc.</p>
 <h2 id="variable-naming">Variable Naming</h2>
@@ -210,6 +217,22 @@ Because we use prefixes, as long as a variable name is valid and unique you can 
 <h2 id="function-call-as-value-function-pointers">Function call as value (Function pointers)</h2>
 <p>You can pass a function call as a value to a parameter or a variable. It will return a String containing the commands to execute the function.
 Syntax: &lt;%FunctionName()&lt;params...&gt;%&gt;</p>
+<pre><code class="language-ucl">%import libmc/cmd.uchc
+
+ascode fun WhileGt(String var; Int value; String callback;):
+    If (#::{$::var} &gt; $::value): Execute()&lt;$::callback&gt;
+    If (#::{$::var} &gt; $::value): Execute()&lt;$::self&gt;
+WhileGt
+</code></pre>
+<p>You can then use the function call as a value:</p>
+<pre><code class="language-ucl">fun Main():
+    WhileGt(&quot;myLocalVar&quot;; 10; &lt;%Print()&lt;&quot;myLocalVar is greater than 10!&quot;&gt;%)&lt;&gt;
+Main
+</code></pre>
+<h2 id="global-to-local-variable-pointer">Global to local variable pointer</h2>
+<p>You can use a global variable's name to "resolve" a local variable's name. You can also use string concat
+For this, you need to use <code>#::{$::globalName}</code> (or: <code>#::{&amp;"my_super_${$::globalName}}_var"</code>)</p>
+<p>Example (same as above)</p>
 <pre><code class="language-ucl">%import libmc/cmd.uchc
 
 ascode fun WhileGt(String var; Int value; String callback;):

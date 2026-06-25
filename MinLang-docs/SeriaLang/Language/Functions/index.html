@@ -69,6 +69,8 @@
                 </li>
                 <li class="toctree-l2 current"><a class="reference internal current" href="#">Functions</a>
     <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#note-all-import-libmcprintuchc-will-only-work-if-you-use-the-bundle-provided-minlang">Note: all "%import libmc/print.uchc" will only work if you use the bundle provided + MinLang</a>
+    </li>
     <li class="toctree-l3"><a class="reference internal" href="#creation">Creation</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#closing-a-function">Closing a Function</a>
@@ -95,11 +97,13 @@
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#the-self-global-variable">The self global variable</a>
     </li>
+    <li class="toctree-l4"><a class="reference internal" href="#minlang-specific-the-loop-flag">(MinLang specific) the loop flag</a>
+    </li>
         </ul>
     </li>
     </ul>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../ULHC/">SeriaLang Header File</a>
+                <li class="toctree-l2"><a class="reference internal" href="../UCHC/">SeriaLang Header File</a>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../IfAndFor/">If And For Statements</a>
                 </li>
@@ -135,6 +139,11 @@
     </ul>
                   </li>
               </ul>
+              <p class="caption"><span class="caption-text">Zed Support</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../ZedLangSupport/Index/">Explaination of the Zed Editor Language Support</a>
+                  </li>
+              </ul>
       </div>
     </div>
     </nav>
@@ -163,6 +172,7 @@
               
                 <h1 id="functions">Functions</h1>
 <p>There's (like variables) a lot to say about functions.</p>
+<h2 id="note-all-import-libmcprintuchc-will-only-work-if-you-use-the-bundle-provided-minlang">Note: all "%import libmc/print.uchc" will only work if you use the bundle provided + MinLang</h2>
 <h2 id="creation">Creation</h2>
 <p>Functions are defined using the <code>fun</code> keyword, followed by the function name, parameters (if any), and a colon (<code>:</code>). The function body is indented below the function definition.</p>
 <pre><code class="language-ucl">fun MyFunction():
@@ -177,7 +187,7 @@ MyFunction
 </code></pre>
 <h2 id="function-parameters">Function Parameters</h2>
 <p>Function parameters are defined within the parentheses following the function name. Each parameter must have a name and a type.
-Parameters are separated by semicolons (<code>;</code>).</p>
+Parameters are separated by semicolons (<code>;</code>). You must end the function's declaration by <code>;</code></p>
 <pre><code class="language-ucl">fun Test(Int a; Int b;):
     Print()&lt;&quot;1&quot;&gt;
 Test
@@ -187,33 +197,42 @@ No default values for parameters.</p>
 <h3 id="accessing-parameters">Accessing Parameters</h3>
 <p>A parameter is a local variable, so you can access it using the <code>#::</code> prefix:</p>
 <pre><code class="language-ucl">fun Test(Int a; Int b;):
-    #::a::Add(1)  // Adds 1 to the parameter 'a'
+    #::a::Add()&lt;1&gt;  // Adds 1 to the parameter 'a'
 Test
 </code></pre>
 <h2 id="return-values">Return Values</h2>
-<p>Not yet supported, but will be in the future.</p>
+<p>Not yet supported, ~~but will be in the future.~~ probably won't happen</p>
 <h2 id="calling-functions">Calling Functions</h2>
 <p>To call a function, simply write its name followed by parentheses and angle brackets. If the function has parameters, provide the arguments within the angle brackets, separated by semicolons (<code>;</code>).</p>
-<pre><code class="language-ucl">fun Greet(String name):
-    Print()&lt;&quot;Hello, &quot; + #::name + &quot;!&quot;&gt;
-Greet
+<pre><code class="language-ucl">%import libmc/print.uchc
+
+fun CheckAge(Int age;):
+    If (#::age &gt;= 18): Print()&lt;&quot;You are major&quot;&gt;
+    If (#::age &lt; 18): Print()&lt;&quot;You are minor&quot;&gt;
+CheckAge
 
 fun Main():
-    Greet()&lt;&quot;Alice&quot;&gt;
+    // This import will only on MinLang + -Ilibmc
+    CheckAge()&lt;18&gt;
 Main
 </code></pre>
 <p>If the function has no parameters, you can call it with empty angle brackets:</p>
-<pre><code class="language-ucl">fun SayHello():
+<pre><code class="language-ucl">%import libmc/print.uchc
+
+fun SayHello():
     Print()&lt;&quot;Hello!&quot;&gt;
 SayHello
 
 fun Main():
-    SayHello&lt;&gt;
+    SayHello()&lt;&gt;
 Main
 </code></pre>
 <h2 id="main-function">Main Function</h2>
 <p>The <code>Main</code> function is a special function that serves as the entry point of the program. It is called automatically when the program starts.</p>
-<pre><code class="language-ucl">fun Main():
+<p>Note: this function must be present, otherwise error: 17</p>
+<pre><code class="language-ucl">%import libmc/print.uchc
+
+fun Main():
     Print()&lt;&quot;This is the main function!&quot;&gt;
 Main
 </code></pre>
@@ -256,12 +275,25 @@ WhileGt
 WhileGt
 </code></pre>
 <p>$::self is the function pointer to the current function (WhileGt in this case).</p>
+<h3 id="minlang-specific-the-loop-flag">(MinLang specific) the loop flag</h3>
+<p>The "loop" flag allows you to create a fast (repeating cmd block) loop that CANNOT be stopped and is started when the user launches the install command</p>
+<p>Example:</p>
+<pre><code class="language-ucl">%import libmc/print.uchc
+
+loop fun Loop():
+    Print()&lt;&quot;Looped!&quot;&gt;
+Loop
+
+fun Main():
+Main
+</code></pre>
+<p>Note: No need to call <code>Loop()&lt;&gt;</code> to start the loop.</p>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
         <a href="../Comments/" class="btn btn-neutral float-left" title="Comments"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../ULHC/" class="btn btn-neutral float-right" title="SeriaLang Header File">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../UCHC/" class="btn btn-neutral float-right" title="SeriaLang Header File">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -291,7 +323,7 @@ WhileGt
       <span><a href="../Comments/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../ULHC/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../UCHC/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>

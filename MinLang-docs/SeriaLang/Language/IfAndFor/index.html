@@ -69,7 +69,7 @@
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../Functions/">Functions</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../ULHC/">SeriaLang Header File</a>
+                <li class="toctree-l2"><a class="reference internal" href="../UCHC/">SeriaLang Header File</a>
                 </li>
                 <li class="toctree-l2 current"><a class="reference internal current" href="#">If And For Statements</a>
     <ul class="current">
@@ -125,6 +125,11 @@
     </ul>
                   </li>
               </ul>
+              <p class="caption"><span class="caption-text">Zed Support</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../ZedLangSupport/Index/">Explaination of the Zed Editor Language Support</a>
+                  </li>
+              </ul>
       </div>
     </div>
     </nav>
@@ -158,12 +163,12 @@
 </code></pre>
 <h3 id="condition">Condition</h3>
 <ul>
-<li>The condition must be a comparison between a local variable and a literal value.</li>
+<li>The condition must be a comparison between a local variable and a literal value (or a global variable).</li>
 <li>The comparison is handled by the compiler, not by the SeriaLang interpreter.</li>
 <li>The condition can only be <code>=</code> (equal), <code>&lt;</code> (less than), <code>&gt;</code> (greater than), <code>&lt;=</code> (less than or equal to), <code>&gt;=</code> (greater than or equal to).</li>
 <li>Adding ! before the comparison operator will negate the condition (e.g., <code>!=</code>, <code>!&lt;</code>, <code>!&gt;</code>, <code>!&lt;=</code>, <code>!&gt;=</code>).</li>
 <li>The local variable must be of type <code>Int</code>.</li>
-<li>The literal value must be of type <code>Int</code>.</li>
+<li>The literal value must be of type <code>Int</code> AND can be a global variable.</li>
 <li>You can compare a local variable to another local variable</li>
 <li>You can compare a local variable to a global variable</li>
 <li>You can compare a global variable to another global variable (the result will be hardcoded)</li>
@@ -200,7 +205,7 @@
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../ULHC/" class="btn btn-neutral float-left" title="SeriaLang Header File"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../UCHC/" class="btn btn-neutral float-left" title="SeriaLang Header File"><span class="icon icon-circle-arrow-left"></span> Previous</a>
         <a href="../Import/" class="btn btn-neutral float-right" title="Importing">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
@@ -228,7 +233,7 @@
         </span>
     
     
-      <span><a href="../ULHC/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../UCHC/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
       <span><a href="../Import/" style="color: #fcfcfc">Next &raquo;</a></span>

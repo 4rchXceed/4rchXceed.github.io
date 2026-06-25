@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../../img/favicon.ico" />
-    <title>Limitations - MinLang + SeriaLang Documentation</title>
+    <title>Explaination of the Zed Editor Language Support - MinLang + SeriaLang Documentation</title>
     <link rel="stylesheet" href="../../css/theme.css" />
     <link rel="stylesheet" href="../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Limitations";
-        var mkdocs_page_input_path = "MinLang/Limitations.md";
+        var mkdocs_page_name = "Explaination of the Zed Editor Language Support";
+        var mkdocs_page_input_path = "ZedLangSupport/Index.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -83,33 +83,49 @@
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">MinLang</span></p>
-              <ul class="current">
+              <ul>
                   <li class="toctree-l1"><a class="reference internal" >Compiler</a>
     <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../Compiler/Exceptions/">Exceptions</a>
+                <li class="toctree-l2"><a class="reference internal" href="../../MinLang/Compiler/Exceptions/">Exceptions</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../Compiler/CommandLineArguments/">CommandLine Arguments</a>
+                <li class="toctree-l2"><a class="reference internal" href="../../MinLang/Compiler/CommandLineArguments/">CommandLine Arguments</a>
                 </li>
     </ul>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../Overview/">Overview</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../../MinLang/Overview/">Overview</a>
                   </li>
-                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Limitations</a>
-    <ul class="current">
-    </ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../MinLang/Limitations/">Limitations</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" >Libraries</a>
     <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../Libraries/stdlib/">stdlib</a>
+                <li class="toctree-l2"><a class="reference internal" href="../../MinLang/Libraries/stdlib/">stdlib</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../Libraries/libmc/">mclib</a>
+                <li class="toctree-l2"><a class="reference internal" href="../../MinLang/Libraries/libmc/">mclib</a>
                 </li>
     </ul>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Zed Support</span></p>
-              <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../../ZedLangSupport/Index/">Explaination of the Zed Editor Language Support</a>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Explaination of the Zed Editor Language Support</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#how-to-install">How-To-Install</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#step-1-if-you-want-to-compile-it-from-sourcestep-1-2-doesnt-work-you-will-use-the-install-dev-extension">Step 1 (if you want to compile it from source/Step 1-2 doesn't work, you will use the Install Dev Extension)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#step-2">Step 2</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#requirements">Requirements</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#windows">Windows?</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#note-if-you-want-to-install-it-from-source">Note if you want to install it from source</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#how-to-dev">How-to-dev</a>
+    </li>
+    </ul>
                   </li>
               </ul>
       </div>
@@ -126,10 +142,10 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
-          <li class="breadcrumb-item">MinLang</li>
-      <li class="breadcrumb-item active">Limitations</li>
+          <li class="breadcrumb-item">Zed Support</li>
+      <li class="breadcrumb-item active">Explaination of the Zed Editor Language Support</li>
     <li class="wy-breadcrumbs-aside">
-          <a href="https://github.com/4rchXceed/MinLang-docs/tree/master/docs/MinLang/Limitations.md" class="icon icon-github"> Edit on GitHub</a>
+          <a href="https://github.com/4rchXceed/MinLang-docs/tree/master/docs/ZedLangSupport/Index.md" class="icon icon-github"> Edit on GitHub</a>
     </li>
   </ul>
   <hr/>
@@ -137,19 +153,37 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="minlang-limitations">MinLang Limitations</h1>
-<p>MinLang operates within the constraints of Minecraft's command system, which imposes several limitations on the features and functionalities that can be implemented. Below are some of the key limitations to be aware of when using MinLang:
-1. <strong>Command Length</strong>: Minecraft commands have a maximum length limit (typically 32,767 characters). Complex SeriaLang constructs may generate commands that exceed this limit, requiring splitting or optimization.
-2. <strong>Performance Constraints</strong>: The execution speed of Minecraft commands can be slower compared to native code execution. Highly complex logic may lead to performance bottlenecks within the game.
-3. <strong>Limited Data Types</strong>: Minecraft commands variables (scorboards) can only handle integer values. This restricts the types of data that can be manipulated directly. (Use ascode workaround for floats and strings)
-4. <strong>EVERYTHING IS ASYNC</strong>: Minecraft command execution is inherently asynchronous, which can lead to timing issues when trying to implement synchronous logic from SeriaLang.
-5. <strong>Globals Only</strong>: MinLang currently only supports global variables due to the limitations in Minecraft's command structure. Local variable scopes are not supported.</p>
+                <h1 id="minlang-zed-language-support">MinLang ZED language support</h1>
+<p>I made a Zed extension, that adds MinLang language support!</p>
+<p>Releases on <a href="https://github.com/4rchXceed/MinLang/releases">Github</a></p>
+<h2 id="how-to-install">How-To-Install</h2>
+<p>Since I don't want to add this "shitty" extension to the marketplace, you need to install it manually</p>
+<h3 id="step-1-if-you-want-to-compile-it-from-sourcestep-1-2-doesnt-work-you-will-use-the-install-dev-extension">Step 1 (if you want to compile it from source/Step 1-2 doesn't work, you will use the Install Dev Extension)</h3>
+<p>Download the release</p>
+<h3 id="step-2">Step 2</h3>
+<p>In the release there's a folder named "ZedLangSupport".
+Run ./install.sh</p>
+<h3 id="requirements">Requirements</h3>
+<p>Zed's data should be in $HOME/.local/share/zed/</p>
+<h3 id="windows">Windows?</h3>
+<p>Nope, I don't use Windows and too lazy to make a whole VM, install 60GB Microslop compiler + rustup + zed + figure out the 5000 errors of MSBuild or their tools</p>
+<h3 id="note-if-you-want-to-install-it-from-source">Note if you want to install it from source</h3>
+<p>Since I did not create a whole github repo for the tree-sitter, you <em>NEED</em> to edit the path in extension.toml.sample <strong>AND THEN RUN <code>./init.sh</code></strong>) <code>repository =</code>
+The path <em>MUST</em> be: <code>file:///absolute-path-to-minlang-grammar</code></p>
+<h2 id="how-to-dev">How-to-dev</h2>
+<ol>
+<li>Do the part above</li>
+<li>Enter <code>Install dev extension</code></li>
+<li>If you want to edit files in languages/minlang or snippets/ -&gt; just edit them and rebuild the extension (Extensions -&gt; MinLang -&gt; Rebuild)</li>
+<li>If you want to edit files in minlang-grammar: install the tree-sitter prequisites OR if you use NixOS btw, use the shell.nix (inside of minlang-grammar)</li>
+<li>To update the code and compile tree-sitter, run ../upd.sh</li>
+<li>Rebuild the extension, and you should be fine</li>
+</ol>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../Overview/" class="btn btn-neutral float-left" title="Overview"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../Libraries/stdlib/" class="btn btn-neutral float-right" title="stdlib">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../../MinLang/Libraries/libmc/" class="btn btn-neutral float-left" title="mclib"><span class="icon icon-circle-arrow-left"></span> Previous</a>
     </div>
 
   <hr/>
@@ -176,10 +210,8 @@
         </span>
     
     
-      <span><a href="../Overview/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../../MinLang/Libraries/libmc/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
-    
-      <span><a href="../Libraries/stdlib/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
